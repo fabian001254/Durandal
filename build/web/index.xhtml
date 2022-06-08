@@ -1,0 +1,207 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://xmlns.jcp.org/jsf/html" 
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<head>
+  <link rel="stylesheet" href="assets/css/style.css"></link>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"></link>
+  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'></link>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></link>
+  <link rel="shortcut icon" href="assets/img/icon.jpg" type="image/x-icon"></link>
+  <title>Opta</title>
+</head>
+
+<body>
+  <p:growl id="growl" showDetail="true" />
+  <p:growl id="growl-sticky" for="sticky-key" showDetail="true" sticky="true" />
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: rgba(255, 255, 255, 0.719);">
+    <a class="navbar-brand" href="#">
+      <img src="assets/img/durandal1.png" height="63" width="150"></img>
+    </a>
+    <button class="navbar-toggler text-center" type="button" data-toggle="collapse" data-target="#navbarText"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarText">
+      <ul class="navbar-nav ml-auto text-center mr-2" id="nav">
+        <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="lista"
+            style="color:black;">Opta</a>
+          <div class="dropdown-menu text-center animate__animated animate__jackInTheBox"
+            style="background-color: rgba(255, 255, 255, 0.719);border-radius: 30px;">
+            <h:form>
+              <p:commandButton action="Opta.xhtml" style="border-radius: 30px;" styleClass="dropdown-item"
+                value="¿Quiénes somos?" />
+
+            </h:form>
+            <h:form>
+              <p:commandButton action="Opta.xhtml" style="border-radius: 30px;" styleClass="dropdown-item"
+                value="Misión y visión" />
+            </h:form>
+            <h:form>
+              <p:commandButton action="Opta.xhtml" style="border-radius: 30px;" styleClass="dropdown-item"
+                value="Software" />
+            </h:form>
+          </div>
+        </li>
+        <li class="nav-item active navsita">
+          <a class="nav-link line" href="#reclutamiento">Solicitúd</a>
+        </li>
+        <li class="nav-item active navsita">
+          <a class="nav-link line" href="#contratacion">Contratación</a>
+        </li>
+        <li class="nav-item active navsita">
+          <a class="nav-link line" href="#servicios">Servicios</a>
+        </li>
+        <li class="nav-item active navsitaa justify-content-center">
+          <h:form>
+            <p:commandButton styleClass="nav-link line nav-item active" value="Iniciar Sesión" action="login.xhtml"
+              style='background: none; border:none; text-align: center; margin: auto' />
+          </h:form>
+        </li>
+        <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle boton_personalizado"
+            data-toggle="dropdown" id="regi" style="color:black;margin: 0px">Registrarse</a>
+          <div class="dropdown-menu text-center animate__animated animate__jackInTheBox dropdown-menu-right" id="regi"
+            style="background-color: rgba(255, 255, 255, 0.719); border-radius: 30px;">
+            <h:form>
+              <p:commandButton action="register_cl.xhtml" style="border-radius: 30px" styleClass="dropdown-item"
+                value="Registro cliente" />
+            </h:form>
+            <h:form>
+              <p:commandButton action="register_as.xhtml" style="border-radius: 30px" styleClass="dropdown-item"
+                value="Registro aspirante" />
+            </h:form>
+          </div>
+
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <header id="header">
+    <div class="text-center d-flex align-items-center mt-0">
+      <div class="container p-5">
+        <div class="row justify-content-center">
+          <div class="col-md-10 mt-5 p-5" style="color: white;">
+            <h1 class="display-4 animate__animated animate__backInLeft ">Bienvenido a Opta</h1>
+            <h2 class="animate__animated animate__backInRight ">Asesoramiento Empresarial</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wave" style="height: 150px; overflow: hidden; border: white;"><svg viewBox="0 0 500 150"
+        preserveAspectRatio="none" style="height: 100%; width: 100%;">
+        <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+          style="stroke: none; fill:rgba(255, 255, 255, 0.658)"></path>
+      </svg></div>
+  </header>
+  <main>
+    <a href="#header"><span class="arriba text-center" style="z-index:1">↑</span></a>
+    <div class="container justify-content-center mt-5 animate__animated animate__bounceIn animate__delay-1s"
+      id="reclutamiento">
+      <h2 class="titulo"> Reclutamiento</h2>
+      <div class="row d-flex justify-content-center text-justify ">
+        <div class="col-md-5">
+          <img src="assets/img/reclutamiento.svg" alt="" style="width: 100%;"></img>
+        </div>
+        <div class="col-md-5">
+          <h3><span>?</span> ¿Estás en busca de oportunidades laborales? ¿Buscas nuevos retos y proyectos profesionales
+            a los que incorporarte?
+            Somos OPTA, nos mueve la ilusión por facilitar el acercamiento entre los candidatos más adecuados y las
+            empresas que los precisan, ofrecemos soluciones de búsqueda y selección, trabajo temporal, reclutamiento de
+            mandos intermedios y directivos. Trabajamos día a día para mejorar tu empleabilidad y ayudarte a encontrar
+            el trabajo que mejor se ajusta a tus necesidades.</h3>
+          <h:form>
+            <p:commandButton styleClass="mt-0 boton_personalizado" value="Solicitar reclutamiento"
+              action="login.xhtml" />
+          </h:form>
+
+        </div>
+      </div>
+    </div>
+    <div class="container justify-content-center mt-5 animate__animated animate__bounceIn animate__delay-1s"
+      id="contratacion">
+      <h2 class="titulo "> Contratación</h2>
+      <div class="row d-flex justify-content-center text-justify">
+        <div class="col-md-5 ">
+          <h3><span>?</span>Nuestros consultores están a tu disposición para ayudarte a encontrar el empleo que estás
+            buscando.
+            Si ninguna de nuestras ofertas vigentes se ajustan a tu perfil profesional, puedes aquí registrar tu
+            currículum, para que podamos valorarlo detenidamente a posiciones que nos puedan surgir en un futuro.</h3>
+          <p:commandButton action="login.xhtml" styleClass="mt-0 boton_personalizado " value="Contratar" />
+        </div>
+        <div class="col-md-5">
+          <img src="assets/img/contratacion.png" alt="" style="width: 100%;"
+            class="animate__animated animate__bounceIn animate__delay-1s"></img>
+        </div>
+      </div>
+    </div>
+    <div class="container justify-content-center mt-5 animate__animated animate__bounceIn animate__delay-1s"
+      id="servicios">
+      <h2 class="titulo "> Servicios</h2>
+      <div class="row d-flex justify-content-center text-justify">
+        <div class="col-md-5">
+          <img src="assets/img/servicios.svg" alt="" style="width: 100%;"></img>
+        </div>
+        <div class="col-md-5 ">
+          <h3><span>?</span>Somos tu mejor socio estratégico para los procesos de Recursos Humanos en tu compañía.
+            Conectamos al mejor talento con las mejores empresas.
+            Innovamos para estar actualizados y así atraer a los mejores talentos, incluyendo a las nuevas generaciones.
+          </h3>
+          <h3><span>!</span>Descarga nuestro catálogo.</h3>
+          <a href="assets/manual/PORTAFOLIO DE SERVICIOS OPTA ASESORAMIENTO EMPRESARIAL.pdf"
+            class="mt-0 boton_personalizado ">Descargar PDF</a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="text-center text-lg-start">
+    <section class="d-flex justify-content-center p-4 border-bottom">
+      <div class="md-5 d-lg-block mr-2">
+        <span>Nuestras redes sociales:</span>
+      </div>
+      <div>
+        <a href="https://www.facebook.com/OPTA-SAS-102744468189869/" class="text-reset">
+          <i class='bx bxl-facebook-circle'></i>
+        </a>
+        <a href="" class="text-reset">
+          <i class='bx bxl-twitter'></i>
+        </a>
+        <a href="https://www.instagram.com/optasas " class="text-reset">
+          <i class='bx bxl-instagram-alt'></i>
+        </a>
+        <a href="contactanos.xhtml" class="boton_personalizado1">Contáctenos</a>
+      </div>
+    </section>
+    <div class="col-md-4 mx-auto mb-md-0 mb-4">
+      <h1 class="text-uppercase mb-4">
+        Contáctanos
+      </h1>
+      <div class="row">
+        <p><a href="https://goo.gl/maps/prdqvyQpPdwauaDt6" class="direccion"><i class='bx bxs-home'></i>Bogotá,
+            Colombia, Calle 22a #100 a26</a></p>
+      </div>
+      <div class="row">
+        <p><i class='bx bx-mail-send'></i>gestionhumana@opta.com.co</p>
+      </div>
+      <div class="row">
+        <p><i class='bx bxs-phone-call'></i>+57 3132602181</p>
+      </div>
+    </div>
+    <div class="pl-2 pr-2 d-flex justify-content-between mx-auto" style="background-color:black">
+      <p style="color: white;" class="ml-2 mt-1">© 2021 Todos los Derechos Reservados</p>
+      <div class="copyright">
+        <a style="color: #FFCB01;" class="mr-2" href="Durandal.xhtml">Power By Durandal</a>
+      </div>
+    </div>
+  </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+</html>

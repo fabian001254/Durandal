@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" 
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"></link>
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'></link>
+  <link rel="stylesheet" href="assets/css/StyleInterfaz.css"></link>
+  <link rel="shortcut icon" href="assets/img/durandal1.png" type="image/x-icon"></link>
+  <title>Enviar mensajes</title>
+</h:head>
+<h:body>
+  <p:growl id="growl" showDetail="true" />
+  <p:growl id="growl-sticky" for="sticky-key" showDetail="true" sticky="true" />
+  <f:event type="preRenderView" listener="#{usuariosControlador.validarSesion()}" />
+  <f:event type="preRenderView" listener="#{usuariosControlador.comprobar('Gc')}" />
+  <a href="#top"><span class="arriba text-center" style="z-index:1">↑</span></a>
+  <div class="row" id="top">
+    <div class="col">
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #11101D ;">
+        <img src="assets/img/durandal1.png" width="180" style="margin-left: 2%;"></img>
+        <button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#Menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end sticky-top" id="Menu">
+          <ul class="navbar-nav mt-2">
+            <div class="usuario">
+              <img src="#{usuariosControlador.pathFoto(usuariosControlador.usuarioLogeado().numerodocumento)}" class="imagen" alt=""></img>
+              <div class="info">
+
+                <label class="nombre">#{usuariosControlador.usuarioLogeado().nombre1}
+                  #{usuariosControlador.usuarioLogeado().apellido1}</label>
+                <p class="perfil">Gestión Humana</p>
+
+              </div>
+              <h:form>
+                <p:commandButton value="Cerrar Sesión" style="margin-top: 3px" actionListener="#{usuariosControlador.cerrarSesion()}" />
+              </h:form>
+            </div>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <!-- Menu lateral de Navegación -->
+  <div class="row">
+    <div class="col-md-3">
+      <nav id="Menu" class="d-md-block collapse sidebar pl-3">
+        <div class="texto mt-4">
+          <a class="nav-link colapsador mt-4" href="gestion_comercial.xhtml" role="button">
+            <i class='bx bxs-home'></i> Página inicio
+          </a>
+          <a class="nav-link colapsador mt-2" data-toggle="collapse" href="#menu7" role="button">
+            Apartes de contratación<i class='bx bxs-down-arrow'></i>
+          </a>
+          <div class="collapse mb-3" id="menu7">
+            <ul class="navbar-nav">
+              <h:form>
+                <li class="nav-item"><a href="consultar_aparte_contratacion1.xhtml" class="nav-link"
+                    target="principal"><i class='bx bxs-detail'></i>Consultar apartes de contratacion</a></li>
+              </h:form>
+            </ul>
+          </div>
+          <a class="nav-link colapsador mt-2" data-toggle="collapse" href="#menu1" role="button">
+            Campaña<i class='bx bxs-down-arrow'></i>
+          </a>
+          <div class="collapse mb-3" id="menu1">
+            <ul class="navbar-nav">
+              <h:form>
+                <li class="nav-item"><a href="campañas_marketing.xhtml" class="nav-link" target="principal"><i
+                      class='bx bxs-detail'></i>Realizar campañas de marketing</a></li>
+                <li class="nav-item"><a href="consultar_campañas_marketing.xhtml" class="nav-link mt-1"
+                    target="principal"><i class='bx bxs-detail'></i>Consultar campañas de marketing</a></li>
+              </h:form>
+            </ul>
+          </div>
+          
+          <a class="nav-link mt-2" href="publicar_contenido.xhtml" role="button"><i class='bx bxs-planet'></i>
+            Enviar correo a clientes potenciales
+          </a>
+          <a class="nav-link mt-2" data-toggle="collapse" href="#menu5" role="button">
+            Reportes estadísticos <i class='bx bxs-down-arrow'></i>
+          </a>
+          <div class="collapse mb-3" id="menu5">
+            <ul class="navbar-nav">
+              <h:form>
+                <li class="nav-item"><a href="consultar_reportes_estadisticos_gestioncomercial.xhtml" class="nav-link"
+                    target="principal"><i class='bx bx-cog'></i> Cosultar reportes estadísticos</a></li>
+              </h:form>
+            </ul>
+          </div>
+          <a class="nav-link mt-2" data-toggle="collapse" href="#menu6" role="button">
+            Ajustar cuenta <i class='bx bxs-down-arrow'></i>
+          </a>
+          <div class="collapse mb-3" id="menu6">
+            <ul class="navbar-nav">
+              <h:form>
+                <li class="nav-item"><a href="ajustes_gc.xhtml" class="nav-link" target="principal"><i class='bx bx-cog'></i> Configurar
+                    cuenta</a></li>
+              </h:form>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="col-md-9">
+      <div class="row p-3 justify-content-around text-center">
+        <div class="row col-md-8 mt-3 p-2 justify-content-center d-flex"
+          style="box-shadow: 0px 0px 14px 5px rgba(0, 0, 0, 0.61); border-radius: 50px; outline: none; font-size: 20px;">
+          <h2 class="mb-3" style="color: black; font-family: Gilroy-Heavy;">ENVIAR CONTENIDO PUBLICITARIO</h2>
+         <h:form>
+             <p:outputLabel for="asun" value="Asunto: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
+              <div class="form-group">              
+                  <p:inputText id="asun" value="#{campañaControlador.asun}" required="true" requiredMessage="No ha especificado el asunto del correo" style="width: auto " />
+                        <p:message for="asun" style="color: red;"/>                     
+              </div>
+             <p:outputLabel for="Contenido" value="Contenido del correo: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>
+                <div class="form-group">                                                        
+                    <p:inputTextarea id="Contenido" value="#{campañaControlador.cont}" required="true" requiredMessage="Ingrese el contenido del correo"/>
+                          <p:message for="Contenido" style="color: red;"/>                           
+                </div>
+
+                          <p:commandButton value="Enviar correo" 
+                                           actionListener="#{campañaControlador.enviarContenido()}"
+                                               class=" mb-3" 
+                                              ajax="false"/> 
+                  
+
+              </h:form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</h:body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+</html>

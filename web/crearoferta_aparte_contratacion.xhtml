@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" 
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"></link>
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'></link>
+  <link rel="stylesheet" href="assets/css/StyleInterfaz.css"></link>
+  <link rel="shortcut icon" href="assets/img/durandal1.png" type="image/x-icon"></link>
+  <title>Consultar oferta de aparte de contratación</title>
+</h:head>
+<h:body>
+  <p:growl id="growl" showDetail="true" />
+  <p:growl id="growl-sticky" for="sticky-key" showDetail="true" sticky="true" />
+  <f:event type="preRenderView" listener="#{usuariosControlador.validarSesion()}" />
+  <f:event type="preRenderView" listener="#{usuariosControlador.comprobar('Gc')}" />
+  <a href="#top"><span class="arriba text-center" style="z-index:1">↑</span></a>
+  <div class="row" id="top">
+    <div class="col">
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #11101D ;">
+        <img src="assets/img/durandal1.png" width="180" style="margin-left: 2%;"></img>
+        <button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#Menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end sticky-top" id="Menu">
+          <ul class="navbar-nav mt-2">
+            <div class="usuario">
+              <img src="#{usuariosControlador.pathFoto(usuariosControlador.usuarioLogeado().numerodocumento)}" class="imagen" alt=""></img>
+              <div class="info">
+
+                <label class="nombre">#{usuariosControlador.usuarioLogeado().nombre1}
+                  #{usuariosControlador.usuarioLogeado().apellido1}</label>
+                <p class="perfil">Gestión Humana</p>
+
+              </div>
+              <h:form>
+                <p:commandButton value="Cerrar Sesión" style="margin-top: 3px" actionListener="#{usuariosControlador.cerrarSesion()}" />
+              </h:form>
+            </div>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <!-- Menu lateral de Navegación -->
+  <div class="row">
+    <div class="col-md-3">
+      <nav id="Menu" class="d-md-block collapse sidebar pl-3">
+        <div class="texto mt-4">
+          <a class="nav-link colapsador mt-4" href="gestion_comercial.xhtml" role="button">
+            <i class='bx bxs-home'></i> Página inicio
+          </a>
+          <a class="nav-link colapsador mt-2" data-toggle="collapse" href="#menu7" role="button">
+            Apartes de contratación<i class='bx bxs-down-arrow'></i>
+          </a>
+          <div class="collapse mb-3" id="menu7">
+            <ul class="navbar-nav">
+              <h:form>
+                <li class="nav-item"><a href="consultar_aparte_contratacion1.xhtml" class="nav-link"
+                    target="principal"><i class='bx bxs-detail'></i>Consultar apartes de contratacion</a></li>
+              </h:form>
+            </ul>
+          </div>
+          <a class="nav-link colapsador mt-2" data-toggle="collapse" href="#menu1" role="button">
+            Campaña<i class='bx bxs-down-arrow'></i>
+          </a>
+          <div class="collapse mb-3" id="menu1">
+            <ul class="navbar-nav">
+              <h:form>
+                <li class="nav-item"><a href="campañas_marketing.xhtml" class="nav-link" target="principal"><i
+                      class='bx bxs-detail'></i>Realizar campañas de marketing</a></li>
+                <li class="nav-item"><a href="consultar_campañas_marketing.xhtml" class="nav-link mt-1"
+                    target="principal"><i class='bx bxs-detail'></i>Consultar campañas de marketing</a></li>
+              </h:form>
+            </ul>
+          </div>
+          
+          <a class="nav-link mt-2" href="publicar_contenido.xhtml" role="button"><i class='bx bxs-planet'></i>
+            Enviar correo a clientes potenciales
+          </a>
+          <a class="nav-link mt-2" data-toggle="collapse" href="#menu5" role="button">
+            Reportes estadísticos <i class='bx bxs-down-arrow'></i>
+          </a>
+          <div class="collapse mb-3" id="menu5">
+            <ul class="navbar-nav">
+              <h:form>
+                <li class="nav-item"><a href="consultar_reportes_estadisticos_gestioncomercial.xhtml" class="nav-link"
+                    target="principal"><i class='bx bx-cog'></i> Cosultar reportes estadísticos</a></li>
+              </h:form>
+            </ul>
+          </div>
+          <a class="nav-link mt-2" data-toggle="collapse" href="#menu6" role="button">
+            Ajustar cuenta <i class='bx bxs-down-arrow'></i>
+          </a>
+          <div class="collapse mb-3" id="menu6">
+            <ul class="navbar-nav">
+              <h:form>
+                <li class="nav-item"><a href="ajustes_gc.xhtml" class="nav-link" target="principal"><i class='bx bx-cog'></i> Configurar
+                    cuenta</a></li>
+              </h:form>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="col-md-9">
+      <div class="row p-3 justify-content-around text-center">
+        <div class="container">
+
+          <h:form id="frmPer">
+            <p:dataTable id="tApartes" value="#{aparteContratacionControlador.ConsultarApartesM()}" var="ap"
+              style="width: 98%" rows="3" paginator="true" paginatorPosition="bottom"
+              paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+              currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} registros"
+              rowsPerPageTemplate="3,5,10,{ShowAll|'Todos'}" widgetVar="wtApartes"
+              emptyMessage="No hay Registros que coincidan con el criterio">
+              <f:facet name="header">
+                <div align="center">
+                  <span>Buscar: </span>
+                  <p:inputText id="globalFilter" onkeyup="PF('wtApartes').filter()" />
+                </div>
+              </f:facet>
+              <p:column headerText="Nombre del cliente" filterMatchMode="contains"
+                sortBy="#{ap.numerodocumentocliente.razonsocial}" filterBy="#{ap.numerodocumentocliente.razonsocial}">
+                <p:outputLabel value="#{ap.numerodocumentocliente.razonsocial}" />
+              </p:column>
+              <p:column headerText="Cantidad de personal" filterMatchMode="contains" sortBy="#{ap.cantpersonal}"
+                filterBy="#{ap.cantpersonal}">
+                <p:outputLabel value="#{ap.cantpersonal}" />
+              </p:column>
+
+              <p:column headerText="Perfil" filterMatchMode="contains" sortBy="#{ap.pl}" filterBy="#{ap.pl}">
+                <p:outputLabel value="#{ap.pl}" />
+              </p:column>
+              <p:column headerText="Fecha inicio" filterMatchMode="contains" sortBy="#{ap.diainicial}">
+                <p:outputLabel value="#{ap.diainicial}" />
+              </p:column>
+              <p:column headerText="Fecha Final" filterMatchMode="contains" sortBy="#{ap.diafinal}">
+                <p:outputLabel value="#{ap.diafinal}" />
+              </p:column>
+              <p:column headerText="Detalles" filterMatchMode="contains">
+                <p:commandButton styleClass="bton" oncomplete="PF('wdlgPer').show()" style="font-size:15px;"
+                  update=":dlgPer" actionListener="#{aparteContratacionControlador.buscar(ap.idApartes,0)}"
+                  value="Ver detalles" />
+                <p:commandButton styleClass="bton" style="font-size:15px;" update=":dlgPer"
+                  actionListener="#{aparteContratacionControlador.buscar(ap.idApartes,1)}" value="Crear oferta"
+                  ajax="false" onclick="return confirm('¿Está seguro de aceptar este aparte de contratación?')" />
+
+                <p:commandButton styleClass="bton" style="font-size:15px;" update=":dlgPer"
+                  actionListener="#{aparteContratacionControlador.buscar(ap.idApartes,2)}" value="Rechazar oferta"
+                  onclick="return confirm('¿Está seguro de rechazar este aparte de contratación?')" ajax="false" />
+
+              </p:column>
+            </p:dataTable>
+          </h:form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p:dialog header="Detalles del aparte" styleClass="justify-content-center text-center w-50" id="dlgPer"
+    widgetVar="wdlgPer">
+    <h:form>
+        <p:outputLabel value="Tiempo de experiencia: #{aparteContratacionControlador.aparte.idTipoContrato.tipocontrato}"
+              style="text-align: center;font-size: 16px;font-weight: bold;font-family:Gilroy-Light ;" /><br />            
+      <p:outputLabel value="Descripción:"
+        style="text-align: center;font-size: 15px;font-weight: bold;font-family:Gilroy-Light ;" /><br />
+      <label
+        style="text-align: center;font-size: 16px;font-weight: bold;font-family:Gilroy-Light ;">#{aparteContratacionControlador.aparte.descripcion}</label><br />
+      <p:outputLabel value="Tiempo de experiencia: #{aparteContratacionControlador.aparte.tiempoexperiencia}"
+        style="text-align: center;font-size: 16px;font-weight: bold;font-family:Gilroy-Light ;" /><br />
+      <p:outputLabel value="Sueldo: #{aparteContratacionControlador.aparte.sueldo}"
+        style="text-align: center;font-size: 16px;font-weight: bold;font-family:Gilroy-Light ;" /><br />
+      <p:outputLabel value="Requerimientos: "
+        style="text-align: center;font-size: 16px;font-weight: bold;font-family:Gilroy-Light ;" /><br />
+      <label
+        style="text-align: center;font-size: 16px;font-weight: bold;font-family:Gilroy-Light ;">#{aparteContratacionControlador.aparte.requrimientos}</label><br />
+      <p:outputLabel value="Estado: #{aparteContratacionControlador.aparte.estado}"
+        style="text-align: center;font-size: 16px;font-weight: bold;font-family:Gilroy-Light ;" /><br />
+      <p:commandButton value="Cerrar" oncomplete="PF('wdlgPer').hide()" immediate="true" />
+    </h:form>
+  </p:dialog>
+</h:body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+</html>

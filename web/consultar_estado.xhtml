@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" 
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+  <title>Ver estado</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"></link>
+  <link rel="stylesheet" href="assets/css/StyleInterfaz.css"></link>
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'></link>
+  <link rel="shortcut icon" href="assets/img/durandal1.png" type="image/x-icon"></link>
+</h:head>
+<h:body>
+  <p:growl id="growl" showDetail="true" />
+  <p:growl id="growl-sticky" for="sticky-key" showDetail="true" sticky="true" />
+  <f:event type="preRenderView" listener="#{usuariosControlador.validarSesion()}" />
+  <f:event type="preRenderView" listener="#{usuariosControlador.comprobar('asn')}" />
+  <div class="row">
+    <div class="col">
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #11101D ;">
+        <img src="assets/img/durandal1.png" width="180" style="margin-left: 2%;"></img>
+        <button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#Menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end sticky-top" id="Menu">
+          <ul class="navbar-nav mt-2">
+            <div class="usuario">
+              <img src="#{usuariosControlador.pathFoto(usuariosControlador.usuarioLogeado().numerodocumento)}" class="imagen" alt=""></img>
+              <div class="info">
+                <label class="nombre">#{usuariosControlador.usuarioLogeado().nombre1}
+                  #{usuariosControlador.usuarioLogeado().apellido1}</label>
+                <p class="perfil">Personal no reclutado</p>
+              </div>
+              <h:form>
+                <p:commandButton value="Cerrar Sesión" style="margin-top: 3px" actionListener="#{usuariosControlador.cerrarSesion()}" />
+              </h:form>
+            </div>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <!-- Menu lateral de Navegación -->
+  <div class="row">
+    <div class="col-md-3">
+      <nav id="Menu" class="d-md-block collapse sidebar pl-3">
+        <div class="texto mt-4">
+          <h:form>
+            <a class="nav-link colapsador mt-4" href="personal_no_reclutado.xhtml" role="button">
+              <i class='bx bx-send'></i> Página principal
+            </a>
+          </h:form>
+          <h:form>
+            <a class="nav-link colapsador mt-4" href="enviar_solicitud.xhtml" role="button">
+              <i class='bx bx-send'></i> Enviar solicitud de reclutamiento
+            </a>
+          </h:form>
+          <h:form>
+            <a class="nav-link colapsador mt-2" href="consultar_estado.xhtml" role="button">
+              <i class='bx bxs-hourglass-top'></i> Consultar estado
+            </a>
+          </h:form>
+           <h:form>
+            <a class="nav-link colapsador mt-2" href="ajustes_asn.xhtml" role="button">
+              <i class="bx bx-cog"></i> Ajustes de cuenta
+            </a>
+          </h:form>
+        </div>
+      </nav>
+    </div>
+    <div class="col-md-9">
+      <div class="row p-3 justify-content-around text-justify">
+
+        <div class="card mt-2">
+          <div class="card-header titulo1">
+            <p>Ver estado de la solicitud</p>
+          </div>
+          <img src="assets/img/hoja_vida.svg" class="card-img-top mt-3" style="width:100%;height: 140px;"></img>
+          <div class="card-body">
+            <p class="font-weight-bold">Su estado actual es: #{usuariosControlador.usuarioLogeado().aspirantes.estado}
+            </p>
+            <br />
+            <p>En los siguientes botones podrá observar que es cada estado: </p>
+          </div>
+          <div class="card-footer">
+            <h:form>
+              <p:commandButton onclick="PF('wdlgPer').show()" value="En espera" styleClass=" mb-3" />
+              <p:commandButton onclick="PF('wdlgPer1').show()" value="Registrado" styleClass=" mb-3" />
+              <p:commandButton onclick="PF('wdlgPer5').show()" value="Citado a entrevista" styleClass=" mb-3" />
+              <p:commandButton onclick="PF('wdlgPer2').sho()" value="Rechazado" styleClass=" mb-3" />
+              <p:commandButton onclick="PF('wdlgPer3').show()" value="Reclutado" styleClass=" mb-3" />
+              <p:commandButton onclick="PF('wdlgPer4').show()" value="Contratado" styleClass=" mb-3" />
+            </h:form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <p:dialog styleClass="justify-content-center text-center w-75" header="En espera" id="dlgPer" widgetVar="wdlgPer">
+      <h:form>
+        <p class="font-weight-bold">¿Qué quiere decir este estado?</p>
+        <p>El estado EN ESPERA es cuando OPTA revisará su hoja de vida y determinará si es apto para ser reclutado, de
+          ser así se enviarán las respectivas pruebas psicotécnicas, de otro modo, será rechazado dando así por
+          finalizado el proceso</p>
+        <p:commandButton styleClass="bton" value="Cerrar" onclick="PF('wdlgPer').hide()" immediate="true" />
+
+      </h:form>
+    </p:dialog>
+    <p:dialog styleClass="justify-content-center text-center w-75" header="Registrado" id="dlgPer1"
+      widgetVar="wdlgPer1">
+      <h:form>
+        <p class="font-weight-bold">¿Qué quiere decir este estado?</p>
+        <p>El estado REGISTRADO quiere decir que usted recientemente se ha registrado en el sistema y no ha enviado la
+          solicitud de reclutamiento</p>
+        <p class="font-weight-bold">¿Cómo solictar el reclutamiento?</p>
+        <p>Vuelva a su menú principal, allí precione el botón de solitar el reclutamiento y espere el siguiente estado
+        </p>
+        <p:commandButton styleClass="bton" value="Cerrar" onclick="PF('wdlgPer1').hide()" immediate="true" />
+
+      </h:form>
+    </p:dialog>
+    <p:dialog styleClass="justify-content-center text-center w-75" header="Rechazado" id="dlgPer2" widgetVar="wdlgPer2">
+      <h:form>
+        <p class="font-weight-bold">¿Qué quiere decir este estado?</p>
+        <p>Este estado quiere decir que su hoja de vida o su prueba psicotécnica no cumplió con lo que requiere el
+          perfil o no cumple los requisitos para ser reclutado</p>
+
+        <p:commandButton styleClass="bton" value="Cerrar" onclick="PF('wdlgPer2').hide()" immediate="true" />
+
+      </h:form>
+    </p:dialog>
+    <p:dialog styleClass="justify-content-center text-center w-75" header="Reclutado" id="dlgPer3" widgetVar="wdlgPer3">
+      <h:form>
+        <p class="font-weight-bold">¿Qué quiere decir este estado?</p>
+        <p>Este estado quiere decir que actualmente usted esta registrado y reclutado por OPTA, por lo cual podrá
+          inscribirse en una de las convocatorias que se encuentren disponibles</p>
+
+        <p:commandButton styleClass="bton" value="Cerrar" onclick="PF('wdlgPer3').hide()" immediate="true" />
+
+      </h:form>
+    </p:dialog>
+    <p:dialog styleClass="justify-content-center text-center w-75" header="Contratado" id="dlgPer4"
+      widgetVar="wdlgPer4">
+      <h:form>
+        <p class="font-weight-bold">¿Qué quiere decir este estado?</p>
+        <p>Este estado quiere decir que actualmente usted esta contratado por una empresa hasta que finalice su contrato
+        </p>
+        <p:commandButton styleClass="bton" value="Cerrar" onclick="PF('wdlgPer4').hide()" immediate="true" />
+      </h:form>
+    </p:dialog>
+    <p:dialog styleClass="justify-content-center text-center w-75" header="Citado a entrevista" id="dlgPer5"
+      widgetVar="wdlgPer4">
+      <h:form>
+        <p class="font-weight-bold">¿Qué quiere decir este estado?</p>
+        <p>Esto quiere decir que esta citado a una entrevista en la central de OPTA en la fecha y día indicado (Revisar
+          el correo)</p>
+
+        <p:commandButton styleClass="bton" value="Cerrar" onclick="PF('wdlgPer5').hide()" immediate="true" />
+
+      </h:form>
+    </p:dialog>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"></script>
+</h:body>
+
+</html>

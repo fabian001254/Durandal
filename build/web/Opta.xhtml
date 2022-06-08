@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" 
+      xmlns:p="http://primefaces.org/ui">
+<head>
+  <link rel="stylesheet" href="assets/css/style.css"></link>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"></link>
+  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'></link>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></link>
+  <link rel="shortcut icon" href="assets/img/icon.jpg" type="image/x-icon"></link>
+  <title>Opta</title>
+</head>
+<h:body>
+    
+               />
+  <p:growl id="growl" showDetail="true" />
+  <p:growl id="growl-sticky" for="sticky-key" showDetail="true" sticky="true" />
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: rgba(255, 255, 255, 0.719);">
+    <a class="navbar-brand" href="#">
+      <img src="assets/img/durandal1.png" height="63" width="150"></img>
+    </a>
+    <button class="navbar-toggler text-center" type="button" data-toggle="collapse" data-target="#navbarText"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarText">
+      <ul class="navbar-nav ml-auto text-center mr-2" id="nav">
+        <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="lista"
+            style="color:black;">Opta</a>
+          <div class="dropdown-menu text-center animate__animated animate__jackInTheBox"
+            style="background-color: rgba(255, 255, 255, 0.719);border-radius: 30px;">
+            <h:form>
+              <p:commandButton action="Opta.xhtml" style="border-radius: 30px;" styleClass="dropdown-item"
+                value="¿Quiénes somos?" />
+            </h:form>
+            <h:form>
+              <p:commandButton action="Opta.xhtml" style="border-radius: 30px;" styleClass="dropdown-item"
+                value="Misión y visión" />
+            </h:form>
+            <h:form>
+              <p:commandButton action="Opta.xhtml" style="border-radius: 30px;" styleClass="dropdown-item"
+                value="Software" />
+            </h:form>
+          </div>
+        </li>
+        <li class="nav-item active navsita">
+          <a class="nav-link line" href="#reclutamiento">Solicitúd</a>
+        </li>
+        <li class="nav-item active navsita">
+          <a class="nav-link line" href="#contratacion">Contratación</a>
+        </li>
+        <li class="nav-item active navsita">
+          <a class="nav-link line" href="#servicios">Servicios</a>
+        </li>
+        <li class="nav-item active navsitaa justify-content-center">
+          <h:form>
+            <p:commandButton styleClass="nav-link line nav-item active" value="Iniciar Sesión" action="login.xhtml"
+              style='background: none; border:none; text-align: center; margin: auto' />
+          </h:form>
+        </li>
+        <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle boton_personalizado"
+            data-toggle="dropdown" id="regi" style="color:black;margin: 0px">Registrarse</a>
+          <div class="dropdown-menu text-center animate__animated animate__jackInTheBox dropdown-menu-right" id="regi"
+            style="background-color: rgba(255, 255, 255, 0.719); border-radius: 30px;">
+            <h:form>
+              <p:commandButton action="register_cl.xhtml" style="border-radius: 30px" styleClass="dropdown-item"
+                value="Registro cliente" />
+            </h:form>
+            <h:form>
+              <p:commandButton action="register_as.xhtml" style="border-radius: 30px" styleClass="dropdown-item"
+                value="Registro aspirante" />
+            </h:form>
+          </div>
+
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <header id="header">
+    <div class="text-center d-flex align-items-center mt-0">
+      <div class="container pt-5 pb-5">
+        <div class="row justify-content-center">
+          <div class="col-md-6 mt-5 pt-5 pb-5" style="color: white;">
+            <h1 class="display-4">Bienvenido a Opta</h1>
+            <h4>Asesoramiento Empresarial</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wave" style="height: 150px; overflow: hidden; border: white;"><svg viewBox="0 0 500 150"
+        preserveAspectRatio="none" style="height: 100%; width: 100%;">
+        <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+          style="stroke: none; fill:rgba(255, 255, 255, 0.658)"></path>
+      </svg></div>
+  </header>
+  <a href="#header"><span class="arriba text-center" style="z-index:1">↑</span></a>
+  <div class="container justify-content-center mt-5" id="quienes-somos">
+    <h2 class="titulo"> ¿Quiénes somos?</h2>
+    <div class="row justify-content-center text-justify d-flex">
+      <div class="col-md-5">
+        <img src="assets/img/icon.jpg" alt="" style="width: 100%;"></img>
+      </div>
+      <div class="col-md-5">
+        <h3><span>?</span> Somos una empresa dedicada a realizar asesoramiento y gestión de Procesos de Gestión del
+          talento humano: Nómina, Reclutamiento, Selección, Desarrollo
+          de Competencias y Programas de Bienestar Laboral.
+          Prestamos servicios de consultoría, asesoría, capacitación e interventoría,
+          Gestionamos servicios de contabilidad y finanza</h3>
+        <a href="index.xhtml" class="boton_personalizado ">Volver a página principal</a>
+      </div>
+    </div>
+  </div>
+  <div class="container justify-content-center mt-5" id="mision">
+    <h1 class="titulo">Misión y Visión</h1>
+    <div class="row d-flex text-justify justify-content-center">
+      <div class="col-md-5">
+        <h3><span>M</span> Nuestra misión está centrada en ofrecer a nuestros clientes una
+          amplia gestión y asesoría integral, fortaleciendo sus procesos
+          administrativos, brindándoles un servicio oportuno, gentil y con
+          los máximos estándares de calidad, apoyados siempre en la
+          disciplina organizacional, el capital intelectual y la calidad
+          humana de nuestros profesionales.</h3>
+      </div>
+      <div class="col-md-5 ml-1">
+        <h3><span>V</span> Consolidarnos como una de las compañías con mayor
+          cobertura en Colombia y Latinoamérica de servicios integrales
+          de gestión y asesoría en sus diferentes procesos
+          administrativos, apoyando a nuestros clientes en su enfoque
+          hacia el logro de sus objetivos rentables.</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="container justify-content-center mt-5" id="software">
+    <h2 class="titulo"> Software</h2>
+    <div class="row d-flex justify-content-center text-justify">
+      <div class="col-md-5">
+        <img src="assets/img/durandal1.png" alt="" class="imagen" style="width: 100%;"></img>
+      </div>
+      <div class="col-md-5">
+        <h3><span>?</span> Durandal es un sistema de información cuyo
+          fin es mejorar y optimizar las tareas que posee la empresa Opta S.A.S....</h3><br></br>
+        <a href="Durandal.xhtml" class="boton_personalizado ">Ir a Durandal</a>
+      </div>
+    </div>
+  </div>
+  <h2 class="titulo mt-5">Estadísticas</h2>
+  <div class="row mt-5 p-3 mr-4 ml-4 justify-content-around text-center" id="estadisticas">
+    <div class="card text-white bg-primary mb-3 w-75" style="max-width: 18rem;">
+      <div class="card-header">Presente en</div>
+      <div class="card-body">
+        <h5 class="card-title iconos"><i class='bx bx-world'></i></h5>
+        <p class="card-text num">1</p>
+        <p class="card-text">Países</p>
+      </div>
+    </div>
+    <div class="card text-white bg-secondary mb-3 w-75" style="max-width: 18rem;">
+      <div class="card-header">Tenemos</div>
+      <div class="card-body">
+        <h5 class="card-title"><i class='bx bx-user'></i></h5>
+        <p class="card-text num">500</p>
+        <p class="card-text">Profesionales</p>
+      </div>
+    </div>
+    <div class="card text-white bg-success mb-3 w-75" style="max-width: 18rem;">
+      <div class="card-header">Trabajamos con</div>
+      <div class="card-body">
+        <h5 class="card-title"><i class='bx bx-buildings'></i></h5>
+        <p class="card-text num">200</p>
+        <p class="card-text num">Clientes</p>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-1 p-3 mr-4 ml-4 justify-content-around text-center">
+    <div class="card text-white bg-danger mb-3 w-75" style="max-width: 18rem;">
+      <div class="card-header">Hemos ayudado</div>
+      <div class="card-body">
+        <h5 class="card-title"><i class='bx bx-wink-smile'></i></h5>
+        <p class="card-text">250</p>
+        <p class="card-text">Candidatos</p>
+      </div>
+    </div>
+    <div class="card text-white bg-info mb-3 w-75" style="max-width: 18rem;">
+      <div class="card-header">Tenemos</div>
+      <div class="card-body">
+        <h5 class="card-title"><i class='bx bxs-building'></i></h5>
+        <p class="card-text">2</p>
+        <p class="card-text">Oficinas</p>
+      </div>
+    </div>
+    <div class="card text-white bg-dark mb-3 w-75" style="max-width: 18rem;">
+      <div class="card-header">Más de</div>
+      <div class="card-body">
+        <h5 class="card-title"><i class='bx bx-receipt'></i></h5>
+        <p class="card-text">2000</p>
+        <p class="card-text">Oferta de empleo</p>
+      </div>
+    </div>
+  </div>
+  <footer class="text-center text-lg-start">
+    <section class="d-flex justify-content-center p-4 border-bottom">
+      <div class="md-5 d-lg-block mr-2">
+        <span>Nuestras redes sociales:</span>
+      </div>
+      <div>
+        <a href="https://www.facebook.com/OPTA-SAS-102744468189869/" class="text-reset">
+          <i class='bx bxl-facebook-circle'></i>
+        </a>
+        <a href="" class="text-reset">
+          <i class='bx bxl-twitter'></i>
+        </a>
+        <a href="https://www.instagram.com/optasas " class="text-reset">
+          <i class='bx bxl-instagram-alt'></i>
+        </a>
+        <a href="contactanos.xhtml" class="boton_personalizado1">Contáctenos</a>
+      </div>
+    </section>
+    <div class="col-md-4 mx-auto mb-md-0 mb-4">
+      <h1 class="text-uppercase mb-4">
+        Contáctanos
+      </h1>
+      <div class="row">
+        <p><a href="https://goo.gl/maps/prdqvyQpPdwauaDt6" class="direccion"><i class='bx bxs-home'></i>Bogotá,
+            Colombia, Calle 22a #100 a26</a></p>
+      </div>
+      <div class="row">
+        <p>
+          <i class='bx bx-mail-send'></i>
+          gestionhumana@opta.com.co
+        </p>
+      </div>
+      <div class="row">
+        <p><i class='bx bxs-phone-call'></i>+57 3132602181</p>
+      </div>
+    </div>
+    <div class="pl-2 pr-2 d-flex justify-content-between mx-auto" style="background-color:black">
+      <p style="color: white;" class="ml-2 mt-1">© 2021 Todos los Derechos Reservados</p>
+      <div class="copyright">
+        <a style="color: #FFCB01;" class="mr-2" href="Durandal.xhtml">Power By Durandal</a>
+      </div>
+    </div>
+  </footer>
+</h:body>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+</html>

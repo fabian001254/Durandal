@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" 
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"></link>
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'></link>
+  <link rel="stylesheet" href="assets/css/StyleInterfaz.css"></link>
+  <link rel="shortcut icon" href="assets/img/durandal1.png" type="image/x-icon"></link>
+  <title>Solicitudes de reclutamiento</title>
+</h:head>
+<h:body>
+  <p:growl id="growl" showDetail="true" />
+  <p:growl id="growl-sticky" for="sticky-key" showDetail="true" sticky="true" />
+  <f:event type="preRenderView" listener="#{usuariosControlador.validarSesion()}" />
+  <f:event type="preRenderView" listener="#{usuariosControlador.comprobar('Gh')}" />
+  <a href="#top"><span class="arriba text-center" style="z-index:1">↑</span></a>
+  <div class="row" id="top">
+    <div class="col">
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #11101D ;">
+        <img src="assets/img/durandal1.png" width="180" style="margin-left: 2%;"></img>
+        <button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#Menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end sticky-top" id="Menu">
+          <ul class="navbar-nav mt-2">
+            <div class="usuario">
+              <img src="#{usuariosControlador.pathFoto(usuariosControlador.usuarioLogeado().numerodocumento)}" class="imagen" alt=""></img>
+              <div class="info">
+
+                <label class="nombre">#{usuariosControlador.usuarioLogeado().nombre1}
+                  #{usuariosControlador.usuarioLogeado().apellido1}</label>
+                <p class="perfil">Gestión Humana</p>
+
+              </div>
+              <h:form>
+                <p:commandButton value="Cerrar Sesión" style="margin-top: 3px" actionListener="#{usuariosControlador.cerrarSesion()}" />
+              </h:form>
+            </div>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <!-- Menu lateral de Navegación -->
+  <div class="row">
+    <div class="col-md-3">
+      <nav id="Menu" class="d-md-block collapse sidebar pl-3">
+        <div class="texto mt-4">
+          <a class="nav-link colapsador mt-4" href="gestion_humana.xhtml" role="button">
+            <i class='bx bxs-home'></i> Página principal
+          </a>
+        </div>
+        <div class="texto mt-2">
+          <a class="nav-link colapsador mt-2" data-toggle="collapse" href="#menu1" role="button">
+            Reclutamiento <i class='bx bxs-down-arrow'></i>
+          </a>
+          <div class="collapse mb-3" id="menu1">
+            <ul class="navbar-nav">
+              <h:form>
+                <li class="nav-item"><a href="solicitudes-de-reclutamiento-g.xhtml" class="nav-link"
+                    target="principal"><i class='bx bx-grid-alt'></i>Solicitudes</a></li>
+                <li class="nav-item"><a href="consultarEntrevistar.xhtml" class="nav-link" target="principal"><i
+                      class='bx bx-grid-alt'></i>Entrevistas</a></li>
+              </h:form>
+            </ul>
+          </div>        
+          <a class="nav-link mt-2" data-toggle="collapse" href="#menu3" role="button">
+            Calificaciones <i class='bx bxs-down-arrow'></i>
+          </a>
+          <div class="collapse mb-3" id="menu3">
+            <ul class="navbar-nav">
+              <h:form>
+                <li class="nav-item"><a href="vercalificaciones.xhtml" class="nav-link"><i class='bx bx-chat'></i>
+                    Calificaciones personal</a></li>
+              </h:form>
+              <h:form>
+                <li class="nav-item"><a href="formulario_de_calificacion.xhtml" class="nav-link"><i
+                      class='bx bx-pie-chart-alt-2'></i> Formulario de calificaciones</a></li>
+              </h:form>
+            </ul>
+          </div>
+          <a class="nav-link mt-2" data-toggle="collapse" href="#menu4" role="button">
+            Pruebas psicotécnicas <i class='bx bxs-down-arrow'></i>
+          </a>
+          <div class="collapse mb-3" id="menu4">
+            <ul class="navbar-nav">
+              <h:form>
+                <li class="nav-item"><a href="pruebas_psicotecnicas.xhtml" class="nav-link"><i class='bx bx-folder'></i>
+                    Realizar pruebas psicotécnicas</a></li>
+              </h:form>
+              <h:form>
+                <li class="nav-item"><a href="consultar_pruebaspsicotecnicas.xhtml" class="nav-link"><i
+                      class='bx bx-folder'></i> Consultar pruebas psicotécnicas</a></li>
+              </h:form>
+            </ul>
+          </div>
+          <a class="nav-link mt-2" data-toggle="collapse" href="#menu5" role="button">
+            Apartes de contratación <i class='bx bxs-down-arrow'></i>
+          </a>
+          <div class="collapse mb-3" id="menu5">
+            <ul class="navbar-nav">
+              <h:form>
+                <li class="nav-item"><a href="consultar_aparte_contratacion.xhtml" class="nav-link"><i
+                      class='bx bxs-note'></i> Consultar apartes</a></li>
+              </h:form>
+            </ul>
+          </div>
+
+          <a class="nav-link mt-2" data-toggle="collapse" href="#menu6" role="button">
+            Perfil <i class='bx bxs-down-arrow'></i>
+          </a>
+          <div class="collapse mb-3" id="menu6">
+            <ul class="navbar-nav">
+              <h:form>
+                <li class="nav-item"><a href="crear_perfil-especialidad.xhtml" class="nav-link"><i
+                      class='bx bxs-file-blank'></i> Crear perfil</a></li>
+              </h:form>
+            </ul>
+          </div>
+
+          <a class="nav-link mt-2" data-toggle="collapse" href="#menu7" role="button">
+            Informes de contratación <i class='bx bxs-down-arrow'></i>
+          </a>
+          <div class="collapse mb-3" id="menu7">
+            <ul class="navbar-nav">
+              <h:form>
+                <li class="nav-item"><a href="crear_informecontratacion.xhtml" class="nav-link"><i
+                      class='bx bx-paperclip'></i> Crear informe de contratación</a></li>
+              </h:form>
+              <h:form>
+                <li class="nav-item"><a href="consultar_infomecontratacion.xhtml" class="nav-link"><i
+                      class='bx bx-paperclip'></i> Consultar informe de contratación</a></li>
+              </h:form>
+            </ul>
+          </div>
+          <a class="nav-link mt-2" data-toggle="collapse" href="#menu10" role="button">
+            Reportes estadísticos <i class='bx bxs-down-arrow'></i>
+          </a>
+          <div class="collapse mb-3" id="menu10">
+            <ul class="navbar-nav">
+              <h:form>
+                <li class="nav-item"><a href="consultar_reportes_estadisticos_gestionhumana.xhtml" class="nav-link"
+                    target="principal"><i class='bx bx-cog'></i> Cosultar reportes estadísticos</a></li>
+              </h:form>
+            </ul>
+          </div>
+
+          <a class="nav-link mt-2" data-toggle="collapse" href="#menu11" role="button">
+            Ajustar cuenta <i class='bx bxs-down-arrow'></i>
+          </a>
+          <div class="collapse mb-3" id="menu11">
+            <ul class="navbar-nav">
+              <h:form>
+                <li class="nav-item"><a href="ajustes_gh.xhtml" class="nav-link" target="principal"><i
+                      class='bx bx-cog'></i> Configurar cuenta</a></li>
+              </h:form>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="col-md-9">
+      <div class="row p-3 justify-content-around text-center">
+        <div class="container">
+          <h:form id="frmPer">
+            <p:dataTable id="tSolicitudes" value="#{aspirantesControlador.consultaAspirantesEnEspera()}" var="soli"
+              style="width: 98%" rows="3" paginator="true" paginatorPosition="bottom"
+              paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+              currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} registros"
+              rowsPerPageTemplate="3,5,10,{ShowAll|'Todos'}" widgetVar="wtSolicitudes"
+              emptyMessage="No hay Registros que coincidan con el criterio">
+              <f:facet name="header">
+                <div align="center">
+                  <span>Buscar: </span>
+                  <p:inputText id="globalFilter" onkeyup="PF('wtSolicitudes').filter()" />
+                </div>
+              </f:facet>
+              <p:column headerText="Numero documento aspirante" filterMatchMode="contains"
+                sortBy="#{soli.numerodocumento}" filterBy="#{soli.numerodocumento}">
+                <p:outputLabel value="#{soli.numerodocumento}" />
+              </p:column>
+              <p:column headerText="Nombre aspirante" filterMatchMode="contains">
+                  <p:outputLabel value="#{usuariosControlador.BuscarNombre(soli.numerodocumento)} #{usuariosControlador.BuscarApellido(soli.numerodocumento)}" />
+              </p:column>
+              <p:column headerText="Perfil" filterMatchMode="contains" sortBy="#{soli.idPerfil.pl}"
+                filterBy="#{soli.idPerfil.pl}">
+                <p:outputLabel value="#{soli.idPerfil.pl}" />
+              </p:column>
+              <p:column headerText="Especializacion" filterMatchMode="contains"
+                sortBy="#{soli.idEspecializacion.nombreespecialidad}"
+                filterBy="#{soli.idEspecializacion.nombreespecialidad}">
+                <p:outputLabel value="#{soli.idEspecializacion.nombreespecialidad}" />
+              </p:column>
+              <p:column headerText="Telefono" filterMatchMode="contains">
+                  <p:outputLabel value="#{usuariosControlador.BuscarNum(soli.numerodocumento)} "/>
+              </p:column>
+              <p:column headerText="Ver detalles" filterMatchMode="contains">
+                  <p:commandButton styleClass="bton" style="font-size: 15px"
+                                   actionListener="#{usuariosControlador.buscarInfo(soli.numerodocumento)}"
+                  oncomplete="PF('wdlgPer1').show()" update="dlgPer1" value="Ver detalles" />
+              </p:column>
+              <p:column headerText="Modificar" filterMatchMode="contains">
+                <p:commandButton styleClass="bton" style="font-size: 15px"
+                                 actionListener="#{aspirantesControlador.ponerdoc(soli.numerodocumento)}"
+                  oncomplete="PF('wdlgPer').show()" update="tSolicitudes" value="Citar a entrevista" />
+                <p:commandButton styleClass="bton" style="font-size: 15px" value="Rechazar" update="tSolicitudes"
+                  actionListener="#{aspirantesControlador.RechazarEnt(soli.numerodocumento,0)}"
+                  onclick="return confirm('¡Está completamente seguro de rechazar este aspirante?')" />
+
+              </p:column>
+            </p:dataTable>
+          </h:form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p:dialog header="Citar a entrevista"  id="dlgPer" widgetVar="wdlgPer">
+    <div class="col-md-12">
+        <h:form>
+        <p:outputLabel for="Dia_citacion" value="Ingrese la fecha de la entrevista: "
+          style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;" />
+        <div class="form-group">
+          <p:datePicker id="Dia_citacion" value="#{aspirantesControlador.dia}" required="true"
+                        requiredMessage="Fecha no valida" pattern="yyyy-MM-dd" numberOfMonths="1" monthNavigator="true" yearNavigator="true" />
+          <p:message for="Dia_citacion" style="color: red;" />
+        </div>
+        <p:outputLabel for="hora_citacion" value="Ingrese la hora de la entrevista: "
+          style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;" />
+        <div class="form-group">
+          <p:datePicker id="hora_citacion" value="#{aspirantesControlador.hora}" required="true"
+            requiredMessage="Debe especificar la hora de la citacion" timeOnly="true" pattern="HH:mm">
+          </p:datePicker>
+        </div>
+        <p:commandButton value="Enviar la entrevista" update=":dlgPer" styleClass=" mb-3"
+                        actionListener="#{aspirantesControlador.enviarCorreoEntrevista()}" ajax="false" />
+        <p:commandButton styleClass="bton" ajax="false" value="Cancelar" oncomplete="PF('wdlgPer').hide()"
+          immediate="true" />
+    </h:form>
+    </div>
+  </p:dialog>
+    <p:dialog header="Detalles del aspirante" styleClass="justify-content-center text-center w-50" id="dlgPer1"
+    widgetVar="wdlgPer1">
+    <h:form>
+        <p:outputLabel value="Documento: #{usuariosControlador.usuarios.numerodocumento}"
+        style="text-align: center;font-size: 15px;font-weight: bold;font-family:Gilroy-Light ;" /><br />   
+        
+      <p:outputLabel value="Días hábiles: #{usuariosControlador.aspirantes.diashabiles}"
+        style="text-align: center;font-size: 15px;font-weight: bold;font-family:Gilroy-Light ;" /><br />
+      <p:outputLabel value="Hoja de vida:  "
+                     style="text-align: center;font-size: 16px;font-weight: bold;font-family:Gilroy-Light ;" /><br/><a href="#{usuariosControlador.aspirantes.hojavida}">Ver hoja de vida</a><br />
+     
+      <p:outputLabel value="Hora a la que puede iniciar: "
+        style="text-align: center;font-size: 16px;font-weight: bold;font-family:Gilroy-Light ;"/><br />          
+       <p:outputLabel value="#{usuariosControlador.aspirantes.horainicial}"
+        style="text-align: center;font-size: 16px;font-weight: bold;font-family:Gilroy-Light ;" ><f:convertDateTime pattern="HH:mm"></f:convertDateTime></p:outputLabel><br />
+        
+        
+      <p:outputLabel value="Hora a la que termina: "
+        style="text-align: center;font-size: 16px;font-weight: bold;font-family:Gilroy-Light ;" /><br />
+        <p:outputLabel value="#{usuariosControlador.aspirantes.horafinal}"
+        style="text-align: center;font-size: 16px;font-weight: bold;font-family:Gilroy-Light ;" ><f:convertDateTime pattern="HH:mm"></f:convertDateTime></p:outputLabel><br />
+        
+      
+      <p:commandButton styleClass="bton" value="Cerrar" oncomplete="PF('wdlgPer1').hide()" immediate="true" />
+    </h:form>
+  </p:dialog>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"></script>
+</h:body>
+
+</html>

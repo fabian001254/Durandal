@@ -1,0 +1,80 @@
+@font-face {
+    font-family: "Gilroy-Light";
+    src: url("../font/Gilroy-Light.ttf");
+    }
+    @font-face {
+      font-family: "Gilroy-Heavy";
+      src: url("../font/Gilroy-Heavy.ttf");
+      }
+html{
+    scroll-behavior: smooth;
+    font-family: "Gilroy-Light";
+}
+header{
+    width: 100%;
+    height: auto;
+    background-image: url(../img/fondo-durandal.png);
+    background-size:cover;
+    height: 500px;
+}
+.boton_personalizado{
+    padding: 16px 46px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    background: -moz-linear-gradient(180deg,#0303fab9 0% , #FFCB01 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(100%, #FFCB01), color-stop(0%, #0303fab9 )); /* safari4+,chrome */
+    background: -webkit-linear-gradient(180deg, #0303fab9 0% , #FFCB01 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(180deg, #0303fab9 0% , #FFCB01 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(180deg, #0303fab9 0% , #FFCB01 100%); /* ie10+ */
+    background: linear-gradient(270deg, #0303fab9 0% , #FFCB01 100%); /* w3c */
+    color: black;
+  }
+  .boton_personalizado:hover{
+    background: -moz-linear-gradient(180deg,#FFCB01 0% , #0303fab9 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(100%, #0303fab9), color-stop(0%, #FFCB01 )); /* safari4+,chrome */
+    background: -webkit-linear-gradient(180deg, #FFCB01 0% , #0303fab9 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(180deg, #FFCB01 0% , #0303fab9 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(180deg, #FFCB01 0% , #0303fab9 100%); /* ie10+ */
+    background: linear-gradient(270deg, #FFCB01 0% , #0303fab9 100%); /* w3c */
+    color: black;
+    text-decoration: none;
+  }
+
+ul{
+    font-size: 20px;
+}
+.boton_personalizado1{
+    transition: 0.4s;
+    padding: 16px 46px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    background: black;
+    color: #fff;
+  }
+.boton_personalizado1:hover{
+    transition: 0.4s;
+    padding: 18px 46px;
+    border:#08011e;
+    background: -moz-linear-gradient(180deg,#fafe02cb 0% , #0303fab9 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(100%, #0303fab9), color-stop(0%, #fafe02cb )); /* safari4+,chrome */
+    background: -webkit-linear-gradient(180deg, #fafe02cb 0% , #0303fab9 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(180deg, #fafe02cb 0% , #0303fab9 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(180deg, #fafe02cb 0% , #0303fab9 100%); /* ie10+ */
+    background: linear-gradient(270deg, #fafe02cb 0% , #0303fab9 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#581479', endColorstr='#ab00e5',GradientType=1 ); /* ie6-9 */
+    color: black;
+}
+.titulo{
+    font-family: Gilroy-Heavy;
+    text-align: center;
+    font-size: 40px;
+    color: #0303fab9;
+}
+h3{
+    font-size: 20px;
+}

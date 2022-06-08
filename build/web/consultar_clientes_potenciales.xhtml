@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" 
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"></link>
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'></link>
+  <link rel="stylesheet" href="assets/css/StyleInterfaz.css"></link>
+  <link rel="shortcut icon" href="assets/img/durandal1.png" type="image/x-icon"></link>
+  <title>Consultar clientes potenciales</title>
+</h:head>
+<h:body>
+  <p:growl id="growl" showDetail="true" />
+  <p:growl id="growl-sticky" for="sticky-key" showDetail="true" sticky="true" />
+  <f:event type="preRenderView" listener="#{usuariosControlador.validarSesion()}" />
+  <a href="#top"><span class="arriba text-center" style="z-index:1">↑</span></a>
+  <div class="row" id="top">
+    <div class="col">
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #11101D ;">
+        <img src="assets/img/durandal1.png" width="180" style="margin-left: 2%;"></img>
+        <button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#Menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end sticky-top" id="Menu">
+          <ul class="navbar-nav mt-2">
+            <div class="usuario">
+              <img src="#{usuariosControlador.pathFoto(usuariosControlador.usuarioLogeado().numerodocumento)}" class="imagen" alt=""></img>
+              <div class="info">
+
+                <label class="nombre">#{usuariosControlador.usuarioLogeado().nombre1}
+                  #{usuariosControlador.usuarioLogeado().apellido1}</label>
+                <p class="perfil">Gestión Comercial</p>
+
+              </div>
+              <h:form>
+                <p:commandButton value="Cerrar Sesión" style="margin-top: 3px" actionListener="#{usuariosControlador.cerrarSesion()}" />
+              </h:form>
+            </div>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <!-- Menu lateral de Navegación -->
+  <div class="row">
+    <div class="col-md-3">
+      <nav id="Menu" class="d-md-block collapse sidebar pl-3">
+        <div class="texto mt-4">
+          <a class="nav-link colapsador mt-4" href="gestion_comercial.xhtml" role="button">
+            <i class='bx bxs-home'></i> Página inicio
+          </a>
+          <a class="nav-link colapsador mt-2" data-toggle="collapse" href="#menu7" role="button">
+            Apartes de contratación<i class='bx bxs-down-arrow'></i>
+          </a>
+          <div class="collapse mb-3" id="menu7">
+            <ul class="navbar-nav">
+              <h:form>
+                <li class="nav-item"><a href="consultar_aparte_contratacion1.xhtml" class="nav-link"
+                    target="principal"><i class='bx bxs-detail'></i>Consultar apartes de contratacion</a></li>
+              </h:form>
+            </ul>
+          </div>
+          <a class="nav-link colapsador mt-2" data-toggle="collapse" href="#menu1" role="button">
+            Campaña<i class='bx bxs-down-arrow'></i>
+          </a>
+          <div class="collapse mb-3" id="menu1">
+            <ul class="navbar-nav">
+              <h:form>
+                <li class="nav-item"><a href="campañas_marketing.xhtml" class="nav-link" target="principal"><i
+                      class='bx bxs-detail'></i>Realizar campañas de marketing</a></li>
+                <li class="nav-item"><a href="consultar_campañas_marketing.xhtml" class="nav-link mt-1"
+                    target="principal"><i class='bx bxs-detail'></i>Consultar campañas de marketing</a></li>
+              </h:form>
+            </ul>
+          </div>
+          <a class="nav-link mt-2" data-toggle="collapse" href="#menu2" role="button">
+            Marketing <i class='bx bxs-down-arrow'></i>
+          </a>
+          <div class="collapse mb-3" id="menu2">
+            <ul class="navbar-nav">
+              <h:form>
+                <li class="nav-item"><a href="listas_de_marketing.xhtml" class="nav-link" target="principal"><i
+                      class='bx bx-file-blank'></i>Listas de marketing</a></li>
+                <li class="nav-item"><a href="consultar_lista_de_marketing.xhtml" class="nav-link mt-1"
+                    target="principal"><i class='bx bx-file-blank'></i>Consultar listas de marketing</a></li>
+              </h:form>
+            </ul>
+          </div>
+          <a class="nav-link mt-2" data-toggle="collapse" href="#menu3" role="button">
+            Publicar contenido <i class='bx bxs-down-arrow'></i>
+          </a>
+          <div class="collapse mb-3" id="menu3">
+            <ul class="navbar-nav">
+              <h:form>
+                <li class="nav-item"><a href="publicar_contenido.xhtml" class="nav-link"><i
+                      class='bx bxs-planet'></i>Publicar contenido</a></li>
+                <li class="nav-item"><a href="consultar_publicaciones.xhtml" class="nav-link mt-1"><i
+                      class='bx bxs-planet'></i>Consultar contenido publicado</a></li>
+              </h:form>
+            </ul>
+          </div>
+          <a class="nav-link mt-2" data-toggle="collapse" href="#menu5" role="button">
+            Reportes estadísticos <i class='bx bxs-down-arrow'></i>
+          </a>
+          <div class="collapse mb-3" id="menu5">
+            <ul class="navbar-nav">
+              <h:form>
+                <li class="nav-item"><a href="consultar_reportes_estadisticos_gestionhumana.xhtml" class="nav-link"
+                    target="principal"><i class='bx bx-cog'></i> Cosultar reportes estadísticos</a></li>
+              </h:form>
+            </ul>
+          </div>
+          <a class="nav-link mt-2" data-toggle="collapse" href="#menu6" role="button">
+            Ajustar cuenta <i class='bx bxs-down-arrow'></i>
+          </a>
+          <div class="collapse mb-3" id="menu6">
+            <ul class="navbar-nav">
+              <h:form>
+                <li class="nav-item"><a href="ajustes_gc.xhtml" class="nav-link" target="principal"><i class='bx bx-cog'></i> Configurar
+                    cuenta</a></li>
+              </h:form>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="col-md-9">
+      <div class="row p-3 justify-content-around text-center">             
+                <h:form id="frmPer">
+            <p:dataTable id="tApartes"
+                         value="#{campañaControlador.listarCl()}"
+              var="ap" style="width: 98%" rows="3" paginator="true" paginatorPosition="bottom"
+              paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+              currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} registros"
+              rowsPerPageTemplate="3,5,10,{ShowAll|'Todos'}" widgetVar="wtApartes"
+              emptyMessage="No hay Registros que coincidan con el criterio">
+              <f:facet name="header">
+                <div align="center">
+                  <span>Buscar: </span>
+                  <p:inputText id="globalFilter" onkeyup="PF('wtApartes').filter()" />
+                  <p:commandButton value="Crear cliente potencial" oncomplete="PF('wdlgPer').show()" update=":dlgPer"
+                                               class=" mb-3"/>  
+                </div>
+              </f:facet>
+                <p:column headerText="Numero de documento" filterMatchMode="contains" filterBy="#{ap.numerodocumento}">
+                    <p:outputLabel value="#{ap.numerodocumento}" />
+              </p:column>  
+                <p:column headerText="Nombre del cliente" filterMatchMode="contains">
+                    <p:outputLabel value="#{ap.nombre1} #{ap.nombre2} #{ap.apellido1} #{ap.apellido2}"/>
+              </p:column>
+              <p:column headerText="Cargo" filterMatchMode="contains">
+                  <p:outputLabel value="#{ap.cargo}" />
+              </p:column>
+                <p:column headerText="Interes" filterMatchMode="contains">
+                    <p:outputLabel value="#{ap.interes}" />
+              </p:column>        
+                 <p:column headerText="Telefono" filterMatchMode="contains">
+                     <p:outputLabel value="#{ap.telefono}" />
+              </p:column>
+                <p:column headerText="Correo" filterMatchMode="contains">
+                    <p:outputLabel value="#{ap.correo}" />
+              </p:column>
+                 <p:column headerText="Opciones" filterMatchMode="contains">
+                     <p:commandButton value="Editar" oncomplete="PF('wdlgPer1').show()" update=":dlgPer1" actionListener="#{campañaControlador.buscarInfoC(ap.numerodocumento)}"
+                                               class=" mb-3"/> 
+                     <p:commandButton value="Borrar" onclick="return confirm('Esta seguro de borrar al aspirante?')" update=":frmPer:tApartes" actionListener="#{campañaControlador.operar2(2, ap.numerodocumento)}"
+                                               class=" mb-3"/>  
+              </p:column>
+            </p:dataTable>
+          </h:form>
+        </div>
+      </div>
+    </div>
+</h:body>
+    <p:dialog header="Crear cliente" styleClass="justify-content-center text-center w-100" id="dlgPer"
+          widgetVar="wdlgPer">
+          <h:form >
+              <div class="col-md-12 d-flex">
+                  <div class="col-md-3">
+                      <p:outputLabel for="doc" value="Numero de documento: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
+                        <div class="form-group">              
+                  <p:inputText id="doc" value="#{campañaControlador.clientesp.numerodocumento}" required="true" requiredMessage="No ha especificado el numero de documento" style="width: auto " />
+                        <p:message for="doc" style="color: red;"/>         
+                  </div>
+                      <p:outputLabel for="tp" value="Tipo de documento: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
+                      <div class="form-group">
+                          <h:selectOneMenu id="tp" value="#{campañaControlador.docs.idDeDocumento}" required="true">     
+                              <f:selectItems value="#{campañaControlador.listartp()}" var="red" itemLabel="#{red.tipodocumento}" itemValue="#{red.idDeDocumento}"/>                                   
+                                   </h:selectOneMenu> 
+                      </div>           
+ 
+                  </div>
+            <div class="col-md-3">                                     
+                  <p:outputLabel for="Nombre1" value="Nombre 1: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
+              <div class="form-group">              
+                  <p:inputText id="Nombre1" value="#{campañaControlador.clientesp.nombre1}" required="true" requiredMessage="No ha especificado el nombre 1" style="width: auto " />
+                        <p:message for="Nombre1" style="color: red;"/>                     
+              </div>
+             <p:outputLabel for="Nombre2" value="Nombre 2: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>
+              <div class="form-group">              
+                  <p:inputText id="Nombre2" value="#{campañaControlador.clientesp.nombre2}" required="true" requiredMessage="No ha especificado el nombre 2" style="width: auto " />
+                        <p:message for="Nombre2" style="color: red;"/>                     
+              </div>
+             <p:outputLabel for="Apellido_1" value="Apellido 1: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>
+              <div class="form-group">              
+                  <p:inputText id="Apellido_1" value="#{campañaControlador.clientesp.apellido1}" required="true" requiredMessage="No ha especificado el apellido" style="width: auto " />
+                        <p:message for="Apellido_1" style="color: red;"/>                     
+              </div>
+             <p:outputLabel for="Apellido_2" value="Apellido 2: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>
+              <div class="form-group">              
+                  <p:inputText id="Apellido_2" value="#{campañaControlador.clientesp.apellido2}" required="true" requiredMessage="No ha especificado el apellido 2" style="width: auto " />
+                        <p:message for="Apellido_2" style="color: red;"/>                     
+              </div>
+              </div>   
+                  
+             <div class="col-md-3">
+                  <p:outputLabel for="inte" value="Interes del cliente: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>
+                <div class="form-group">                                                        
+                    <p:inputTextarea id="inte" value="#{campañaControlador.clientesp.interes}"  required="true" requiredMessage="No se ha especificado el interes del cliente"/>
+                          <p:message for="inte" style="color: red;"/>                           
+                </div>
+             <p:outputLabel for="cargo" value="Cargo: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                            
+                            <div class="form-group">
+                                <p:inputText id="cargo" value="#{campañaControlador.clientesp.cargo}" required="true" requiredMessage="No se ha especificado el cargo" style="width: auto " />
+                          <p:message for="cargo" style="color: red;"/>
+                            </div> 
+              
+             </div>
+                <div class="col-md-3">
+                    <p:outputLabel for="tel" value="Telefono: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>
+              <div class="form-group">              
+                  <p:inputText id="tel" value="#{campañaControlador.clientesp.telefono}" required="true" requiredMessage="No ha especificado el telefono" style="width: auto " />
+                        <p:message for="tel" style="color: red;"/>                     
+              </div>
+              <p:outputLabel for="cor" value="Correo: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>
+              <div class="form-group">              
+                  <p:inputText id="cor" value="#{campañaControlador.clientesp.correo}" required="true" requiredMessage="No ha especificado el correo del cliente" style="width: auto " />
+                        <p:message for="cor" style="color: red;"/>                     
+              </div>
+                          <p:commandButton value="Crear cliente" 
+                                           actionListener="#{campañaControlador.crearP()}"
+                                               class=" mb-3"  oncomplete="PF('wdlgPer').hide"
+                                               ajax="false" update=":frmPer:tApartes"/> 
+                          <p:commandButton value="Cerrar" onclick="PF('wdlgPer').hide()"/>
+                </div>
+                  </div>
+              </h:form>
+        </p:dialog>
+     <p:dialog header="Modificar cliente" styleClass="justify-content-center text-center w-100" id="dlgPer1"
+          widgetVar="wdlgPer1">
+          <h:form >
+              <div class="col-md-12 d-flex">
+                  <div class="col-md-3">
+                      <p:outputLabel for="doc" value="Numero de documento: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
+                        <div class="form-group">              
+                  <p:inputText id="doc" value="#{campañaControlador.clientesp.numerodocumento}" required="true" requiredMessage="No ha especificado el numero de documento" style="width: auto " />
+                        <p:message for="doc" style="color: red;"/>         
+                  </div>
+                      <p:outputLabel for="tp" value="Tipo de documento: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
+                      <div class="form-group">
+                          <h:selectOneMenu id="tp" value="#{campañaControlador.clientesp.idDeDocumento.tipodocumento}"  disabled="true" required="true">     
+                              <f:selectItems value="#{campañaControlador.listartp()}" var="red" itemLabel="#{red.tipodocumento}" itemValue="#{red.idDeDocumento}"/>                                   
+                                   </h:selectOneMenu> 
+                      </div>            
+                  </div>
+            <div class="col-md-3">                                     
+                  <p:outputLabel for="Nombre1" value="Nombre 1: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
+              <div class="form-group">              
+                  <p:inputText id="Nombre1" value="#{campañaControlador.clientesp.nombre1}" required="true" requiredMessage="No ha especificado el nombre" style="width: auto " />
+                        <p:message for="Nombre1" style="color: red;"/>                     
+              </div>
+             <p:outputLabel for="Nombre2" value="Nombre 2: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>
+              <div class="form-group">              
+                  <p:inputText id="Nombre2" value="#{campañaControlador.clientesp.nombre2}" required="true" requiredMessage="No ha especificado el nombre 2" style="width: auto " />
+                        <p:message for="Nombre2" style="color: red;"/>                     
+              </div>
+             <p:outputLabel for="Apellido_1" value="Apellido 1: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>
+              <div class="form-group">              
+                  <p:inputText id="Apellido_1" value="#{campañaControlador.clientesp.apellido1}" required="true" requiredMessage="No ha especificado el apellido" style="width: auto " />
+                        <p:message for="Apellido_1" style="color: red;"/>                     
+              </div>
+             <p:outputLabel for="Apellido_2" value="Apellido 2: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>
+              <div class="form-group">              
+                  <p:inputText id="Apellido_2" value="#{campañaControlador.clientesp.apellido2}" required="true" requiredMessage="No ha especificado el apellido 2" style="width: auto " />
+                        <p:message for="Apellido_2" style="color: red;"/>                     
+              </div>
+              </div>   
+                  
+             <div class="col-md-3">
+                  <p:outputLabel for="inte" value="Interes del cliente: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>
+                <div class="form-group">                                                        
+                    <p:inputTextarea id="inte" value="#{campañaControlador.clientesp.interes}"  required="true" requiredMessage="No se ha especificado el interes"/>
+                          <p:message for="inte" style="color: red;"/>                           
+                </div>
+             <p:outputLabel for="cargo" value="Cargo: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                            
+                            <div class="form-group">
+                                <p:inputText id="cargo" value="#{campañaControlador.clientesp.cargo}" required="true" requiredMessage="No se ha especiicado el cargo" style="width: auto " />
+                          <p:message for="cargo" style="color: red;"/>
+                            </div>              
+              </div> 
+                  <div class="col-md-3">
+                                    <p:outputLabel for="tel" value="Telefono: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>
+              <div class="form-group">              
+                  <p:inputText id="tel" value="#{campañaControlador.clientesp.telefono}" required="true" requiredMessage="No ha especificado el telefono" style="width: auto " />
+                        <p:message for="tel" style="color: red;"/>                     
+              </div>
+              <p:outputLabel for="cor" value="Correo: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>
+              <div class="form-group">              
+                  <p:inputText id="cor" value="#{campañaControlador.clientesp.correo}" required="true" requiredMessage="No ha especificado el correo" style="width: auto " />
+                        <p:message for="cor" style="color: red;"/>                     
+              </div> 
+                                                <p:commandButton value="Actualizar cliente" 
+                                           actionListener="#{campañaControlador.operar2(1,campañaControlador.clientesp.numerodocumento)}"
+                                               class=" mb-3"  oncomplete="PF('wdlgPer').hide"
+                                               ajax="false" update=":frmPer:tApartes" /> 
+                          <p:commandButton value="Cerrar" oncomplete="PF('wdlgPer1').hide()"/>
+                  </div>
+              </div>
+              </h:form>
+        </p:dialog>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+</html>

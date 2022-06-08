@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="389bc20f-4a96-4dd4-8bf2-d4925190bf51">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="numero_documento" class="java.lang.Long"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="hora" class="java.sql.Time"/>
+	<field name="dia" class="java.util.Date"/>
+	<title>
+		<band height="79" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="79" forecolor="#000000" backcolor="#0000CC" uuid="9f493cdc-83ca-477f-8ce3-351c71292dd7"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="234" y="12" width="264" height="52" forecolor="#FFFFFF" uuid="4e795732-d27e-4ba3-b2dd-c38c8ca40a69"/>
+				<textElement>
+					<font size="30"/>
+				</textElement>
+				<text><![CDATA[Reporte entrevista]]></text>
+			</staticText>
+			<image>
+				<reportElement x="23" y="0" width="153" height="79" uuid="a2b3f298-15c4-4a2c-8d2a-674d57159a8a"/>
+				<imageExpression><![CDATA["C:\\Users\\facat\\Documents\\NetBeansProjects\\DurandalS\\web\\assets\\img\\icon.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="138" height="20" uuid="ad39f3f1-ed8e-48a2-b3f0-caacf144df85"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Numero documento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="138" y="0" width="138" height="20" uuid="ea80b135-7c64-41af-94ae-276a26b24413"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="276" y="0" width="138" height="20" uuid="429b2dc6-d6ae-471f-9641-75175413e472"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Hora]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="414" y="0" width="138" height="20" uuid="94060c9d-bffb-4370-ae77-19fee21d8e94"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Dia]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="138" height="20" uuid="bb7d62b5-1687-44e0-9831-810a3c1b5149"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{numero_documento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="138" y="0" width="138" height="20" uuid="c2ceed20-e5aa-453c-b894-61efbbb08b02"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="276" y="0" width="138" height="20" uuid="27a0fc7c-c306-43db-9152-c439b7fd409c"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{hora}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="414" y="0" width="138" height="20" uuid="add6ab2e-c7af-4324-a1fb-edd1c05382cf"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{dia}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="44" splitType="Stretch">
+			<textField>
+				<reportElement x="452" y="24" width="100" height="20" uuid="8bc45874-46f6-40de-aba8-6e283ba6b94c"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+</jasperReport>

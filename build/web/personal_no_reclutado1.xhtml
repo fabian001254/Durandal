@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" 
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+  <title>Personal no Reclutado</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"></link>
+  <link rel="stylesheet" href="assets/css/StyleInterfaz.css"></link>
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'></link>
+  <link rel="shortcut icon" href="assets/img/durandal1.png" type="image/x-icon"></link>
+</h:head>
+<h:body>
+  <p:growl id="growl" showDetail="true" />
+  <p:growl id="growl-sticky" for="sticky-key" showDetail="true" sticky="true" />
+  <f:event type="preRenderView" listener="#{usuariosControlador.validarSesion()}" />
+  <f:event type="preRenderView" listener="#{usuariosControlador.comprobar('asn')}" />
+  <div class="row">
+    <div class="col">
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #11101D ;">
+        <img src="assets/img/durandal1.png" width="180" style="margin-left: 2%;"></img>
+        <button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#Menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end sticky-top" id="Menu">
+          <ul class="navbar-nav mt-2">
+            <div class="usuario">
+              <img src="#{usuariosControlador.pathFoto(usuariosControlador.usuarioLogeado().numerodocumento)}" class="imagen" alt=""></img>
+              <div class="info">
+                <label class="nombre">#{usuariosControlador.usuarioLogeado().nombre1}
+                  #{usuariosControlador.usuarioLogeado().apellido1}</label>
+                <p class="perfil">Personal no reclutado</p>
+              </div>
+              <h:form>
+                <p:commandButton value="Cerrar Sesión" style="margin-top: 3px" actionListener="#{usuariosControlador.cerrarSesion()}" />
+              </h:form>
+            </div>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <!-- Menu lateral de Navegación -->
+  <div class="row">
+    <div class="col-md-3">
+      <nav id="Menu" class="d-md-block collapse sidebar pl-3">
+        <div class="texto mt-4">
+          <h:form>
+            <a class="nav-link colapsador mt-4" href="enviar_solicitud.xhtml" role="button">
+              <i class='bx bx-send'></i> Enviar solicitud de reclutamiento
+            </a>
+          </h:form>
+          <h:form>
+            <a class="nav-link colapsador mt-2" href="consultar_estado.xhtml" role="button">
+              <i class='bx bxs-hourglass-top'></i> Consultar estado
+            </a>
+          </h:form>
+          <h:form>
+            <a class="nav-link colapsador mt-2" href="envioPruebaPsicotecnica.xhtml" role="button">
+              <i class='bx bxs-hourglass-top'></i> Prueba psicotecnica
+            </a>
+          </h:form>
+            
+            <h:form>
+            <a class="nav-link colapsador mt-2" href="ajustes_asn.xhtml" role="button">
+              <i class='bx bx-cog'></i> Ajustes de cuenta
+            </a>
+          </h:form>
+            
+            
+        </div>
+      </nav>
+    </div>
+    <div class="col-md-9">
+      <div class="row p-3 justify-content-around text-justify">
+        <div class="card mt-2" style="max-width: 18rem;">
+          <div class="card-header titulo1">
+            <p>Solicitar reclutamiento</p>
+          </div>
+          <img src="assets/img/solicitud.svg" class="card-img-top mt-2" style="width:100%;height: 140px;"></img>
+          <div class="card-body">
+          </div>
+        </div>
+        <div class="card mt-2" style="max-width: 18rem;">
+          <div class="card-header titulo1">
+            <p>Ver estado de la solicitud</p>
+          </div>
+          <img src="assets/img/hoja_vida.svg" class="card-img-top mt-3" style="width:100%;height: 140px;"></img>
+          <div class="card-body">
+            <h:form>
+              <a href="consultar_estado.xhtml" class="boton_personalizado">Ver estado <span
+                  class="badge badge-dark">1</span></a>
+            </h:form>
+          </div>
+        </div>
+        <div class="card mt-2" style="width: 30rem;">
+          <div class="card-header titulo1">
+            <p>Ajustar cuenta</p>
+          </div>
+          <img src="assets/img/ajustes.svg" class="card-img-top mt-2" style="width:100%;height: 140px;"></img>
+          <div class="card-body">
+            <a href="" class="boton_personalizado"> Configurar cuenta</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"></script>
+</h:body>
+
+</html>
