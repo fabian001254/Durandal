@@ -57,7 +57,7 @@
             <ul class="navbar-nav">
               <h:form>
                 <li class="nav-item"><a href="consultar_aparte_contratacion1.xhtml" class="nav-link"
-                    target="principal"><i class='bx bxs-detail'></i>Consultar apartes de contratacion</a></li>
+                    target="principal"><i class='bx bxs-detail'></i>Consultar apartes de contratación</a></li>
               </h:form>
             </ul>
           </div>
@@ -155,7 +155,7 @@
                 <p:column headerText="Interes" filterMatchMode="contains">
                     <p:outputLabel value="#{ap.interes}" />
               </p:column>        
-                 <p:column headerText="Telefono" filterMatchMode="contains">
+                 <p:column headerText="Teléfono" filterMatchMode="contains">
                      <p:outputLabel value="#{ap.telefono}" />
               </p:column>
                 <p:column headerText="Correo" filterMatchMode="contains">
@@ -178,7 +178,7 @@
           <h:form >
               <div class="col-md-12 d-flex">
                   <div class="col-md-3">
-                      <p:outputLabel for="doc" value="Numero de documento: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
+                      <p:outputLabel for="doc" value="Número de documento: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
                         <div class="form-group">              
                   <p:inputText id="doc" value="#{campañaControlador.clientesp.numerodocumento}" required="true" requiredMessage="No ha especificado el numero de documento" style="width: auto " />
                         <p:message for="doc" style="color: red;"/>         
@@ -252,7 +252,7 @@
           <h:form >
               <div class="col-md-12 d-flex">
                   <div class="col-md-3">
-                      <p:outputLabel for="doc" value="Numero de documento: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
+                      <p:outputLabel for="doc" value="Número de documento: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
                         <div class="form-group">              
                   <p:inputText id="doc" value="#{campañaControlador.clientesp.numerodocumento}" required="true" requiredMessage="No ha especificado el numero de documento" style="width: auto " />
                         <p:message for="doc" style="color: red;"/>         
@@ -290,19 +290,19 @@
              <div class="col-md-3">
                   <p:outputLabel for="inte" value="Interes del cliente: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>
                 <div class="form-group">                                                        
-                    <p:inputTextarea id="inte" value="#{campañaControlador.clientesp.interes}"  required="true" requiredMessage="No se ha especificado el interes"/>
+                    <p:inputTextarea id="inte" value="#{campañaControlador.clientesp.interes}"  required="true" requiredMessage="No se ha especificado el interés"/>
                           <p:message for="inte" style="color: red;"/>                           
                 </div>
              <p:outputLabel for="cargo" value="Cargo: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                            
                             <div class="form-group">
-                                <p:inputText id="cargo" value="#{campañaControlador.clientesp.cargo}" required="true" requiredMessage="No se ha especiicado el cargo" style="width: auto " />
+                                <p:inputText id="cargo" value="#{campañaControlador.clientesp.cargo}" required="true" requiredMessage="No se ha especificado el cargo" style="width: auto " />
                           <p:message for="cargo" style="color: red;"/>
                             </div>              
               </div> 
                   <div class="col-md-3">
                                     <p:outputLabel for="tel" value="Telefono: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>
               <div class="form-group">              
-                  <p:inputText id="tel" value="#{campañaControlador.clientesp.telefono}" required="true" requiredMessage="No ha especificado el telefono" style="width: auto " />
+                  <p:inputText id="tel" value="#{campañaControlador.clientesp.telefono}" required="true" requiredMessage="No ha especificado el teléfono" style="width: auto " />
                         <p:message for="tel" style="color: red;"/>                     
               </div>
               <p:outputLabel for="cor" value="Correo: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>

@@ -78,7 +78,7 @@
                       class='bx bxs-file'></i>Consultar apartes de contratación</a></li>
                 <li class="nav-item"><a href="crearAparte.xhtml" class="nav-link" target="principal"><i
                       class='bx bxs-file'></i>Crear apartes de contratación</a></li>
-                      <li class="nav-item"><a href="ConsultarOfertas-cl.xhtml" class="nav-link" target="principal"><i class='bx bxs-file'></i>Consultar aspirantes inscrito a ofertas generadas por apartes</a></li>
+                      <li class="nav-item"><a href="ConsultarOfertas-cl.xhtml" class="nav-link" target="principal"><i class='bx bxs-file'></i>Consultar aspirantes inscritos a ofertas generadas por apartes</a></li>
               </h:form>
             </ul>
           </div>
@@ -113,7 +113,7 @@
       <div class="col-md-12 justify-content-around text-center d-flex">
         <div class="row col-md-8 mt-3 p-2 justify-content-center d-flex"
           style="box-shadow: 0px 0px 14px 5px rgba(0, 0, 0, 0.61); border-radius: 50px; outline: none; font-size: 20px;">
-          <h2 class="mb-3" style="color: black; font-family: Gilroy-Heavy;">CREAR APARTE DE CONTRATACION</h2>
+          <h2 class="mb-3" style="color: black; font-family: Gilroy-Heavy;">CREAR APARTE DE CONTRATACIÓN</h2>
           <h:form enctype="multipart/form-data">
             <p:outputLabel for="Tipo_contrato" value="Ingrese el tipo de contrato: "
               style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;" />
@@ -145,7 +145,7 @@
 
               <p:message for="cant" style="color: red;" />
             </div>
-            <p:outputLabel for="pl" value="Ingrese el perfil necesitado (La inicial en mayuscula): "
+            <p:outputLabel for="pl" value="Ingrese el perfil necesitado (La inicial en mayúscula): "
               style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;" />
             <div class="form-group">
               <p:inputText id="pl" value="#{aparteContratacionControlador.aparte.pl}" required="true"
@@ -160,7 +160,7 @@
               style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;" />
             <div class="form-group">
               <p:inputTextarea rows="6" cols="33" id="des" value="#{aparteContratacionControlador.aparte.descripcion}"
-                required="true" requiredMessage="Debe especificar la descripcion">
+                required="true" requiredMessage="Debe especificar la descripción">
               </p:inputTextarea>
 
               <p:message for="des" style="color: red;" />
@@ -186,7 +186,7 @@
               style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;" />
             <div class="form-group">
               <p:inputTextarea rows="6" cols="33" id="req" value="#{aparteContratacionControlador.aparte.requrimientos}"
-                required="true" requiredMessage="Debe especificar la descripcion">
+                required="true" requiredMessage="Debe especificar la descripción">
               </p:inputTextarea>
 
               <p:message for="req" style="color: red;" />

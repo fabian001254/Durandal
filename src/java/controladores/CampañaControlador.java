@@ -203,7 +203,7 @@ public class CampañaControlador implements Serializable {
                 listas.setIdDeCampaña(campaña);
                 listas.setTitulo("Lista de la campaña "+campaña.getNombrecampaña());
                 listasfacade.create(listas);
-                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Campaña creada con exito!, el nombre de la lista de marketing es: "+listas.getTitulo()));
+                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "¡Campaña creada con éxito!, el nombre de la lista de marketing es: "+listas.getTitulo()));
             }
         } catch (Exception e) {
             System.out.println("Error "+e);
@@ -220,7 +220,7 @@ public class CampañaControlador implements Serializable {
                 listas.setIdDeCampaña(campaña);                
                 listas.setTitulo("Lista de la campaña "+campaña.getNombrecampaña());                
                 listasfacade.edit(listas);
-                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Campaña ha actualizado con exito!, el nombre de la lista de marketing es: "+listas.getTitulo()));
+                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "¡Campaña ha actualizado con éxito!, el nombre de la lista de marketing es: "+listas.getTitulo()));
             }
         }else if(op == 2){
             List<ClientesPotenciales> listarP = clientespfacade.consulta(listas);
@@ -246,12 +246,12 @@ public class CampañaControlador implements Serializable {
         if(op==1){
             clientespfacade.edit(clientesp);
             irlista2();
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Se ha modificado con exito"));
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Se ha modificado con éxito"));
         }else if(op == 2){
             buscarInfoC(doc);
             clientespfacade.remove(clientesp);
             irlista2();
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Se ha eliminado con exito"));
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Se ha eliminado con éxito"));
         }
     }
     //Correos
@@ -259,7 +259,7 @@ public class CampañaControlador implements Serializable {
         try {            
             List<String> lista = clientespfacade.consultaC();
             Mailers.send(lista, asun,mensajeConEstilo());
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Se ha enviado con exito el correo"));
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Se ha enviado con éxito el correo"));
         } catch (UnsupportedEncodingException e) {
             System.out.println("Error "+e);
         }

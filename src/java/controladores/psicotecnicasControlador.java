@@ -139,7 +139,7 @@ public class psicotecnicasControlador implements Serializable {
         aspirantes = aspirantesfacade.find(doc);
             pruebas = psicotecnicasfacade.Comprobar(aspirantes);
             if(pruebas.getPathPruebaEntregada() == null){
-                FacesContext.getCurrentInstance().getExternalContext().redirect("personal_no_reclutado1.xhtml");
+                FacesContext.getCurrentInstance().getExternalContext().redirect("personal_no_reclutado1.xhtml");                
             }
             pruebas = new PruebasPsicotecnicas();
             aspirantes = new Aspirantes();
@@ -168,7 +168,7 @@ public class psicotecnicasControlador implements Serializable {
         Date hora = Date.valueOf(horamax);
         pruebas.setTiempolimite(hora);
         psicotecnicasfacade.create(pruebas);
-        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Se ha creado con exito la prueba"));
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Se ha creado con éxito la prueba"));
         Aspirantes asp = aspirantesfacade.find(aspirantesfacade.find(aspirantes.getNumerodocumento()));
         asp.setEstado("En espera");
         aspirantesfacade.edit(asp);
@@ -181,9 +181,10 @@ public class psicotecnicasControlador implements Serializable {
             pruebas = psicotecnicasfacade.Comprobar(aspirantes);
             if(pruebas.getPathPruebaEntregada() == null){
                  upload();
-                 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "La prueba psicotecnica se ha subido con exito"));
+                 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "La prueba psicotécnica se ha subido con exito"));
             }else{
-                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Aviso", "Ya ha subido una prueba psicotecnica y no es remplazable"));
+                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Aviso", "Ya ha subido una prueba psicotécnica y no es remplazable"));
+
             }
            
         }
@@ -235,7 +236,7 @@ public class psicotecnicasControlador implements Serializable {
                     
                     
                 }else{
-                    FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Aviso", "La prueba psicotecnica debe contener un archivo en formato PDF otros no son aceptados"));
+                    FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Aviso", "La prueba psicotécnica debe contener un archivo en formato PDF otros no son aceptados"));
                 }
         } catch (IOException e) {
             System.out.println("Error "+e);

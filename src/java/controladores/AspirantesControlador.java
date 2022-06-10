@@ -270,11 +270,11 @@ public class AspirantesControlador implements Serializable {
     public void enviarCorreoEntrevista(){
              try {
                 citar();
-                String asunto = "Citacion a entrevista";
+                String asunto = "Citación a entrevista";
                 Usuarios usu = usuariosfacade.find(aspirantes.getNumerodocumento());
                 String destinatario = usu.getCorreo();
                 Mailer.send(destinatario,asunto,mensajeConEstiloEntrevista(usu.getNombre1(),usu.getApellido1())); 
-                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Se ha enviado la entrevista con exito"));
+                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Se ha enviado la entrevista con éxito"));
         } catch (UnsupportedEncodingException e) {
                  System.out.println("No se envio correo error: "+e);
         }
@@ -289,8 +289,8 @@ public class AspirantesControlador implements Serializable {
              usuarios = usuariosfacade.find(doc);
              usuarios.setRol("As");
              usuariosfacade.edit(usuarios);
-             enviarCorreoAOC("Reclutado con exito",1);
-             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Aviso", "Se ha reclutado con exito"));
+             enviarCorreoAOC("Reclutado con éxito",1);
+             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Aviso", "Se ha reclutado con éxito"));
          } catch (Exception e) {
              System.out.println("Error "+e);
          }
@@ -305,7 +305,7 @@ public class AspirantesControlador implements Serializable {
                  entrevistasfacade.remove(entrevista);
              }
              enviarCorreoAOC("Reclutamiento Rechazado",2);
-             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Aviso", "Se ha rechazado con exito"));
+             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Aviso", "Se ha rechazado con éxito"));
          } catch (Exception e) {
              System.out.println("Error "+e);
          }
@@ -318,8 +318,8 @@ public class AspirantesControlador implements Serializable {
                     + "<p style=\"text-align: center; color: #307EDF\">\n"
                     + "<p> Sr(a) : "+usu.getNombre1()+" "+usu.getApellido1()
                     + "<p> ¡Felicidades! ha sido reclutado por parte de OPTA, Su estado ahora es RECLUTADO\n"
-                    + "<p> ¿Que quiere decir este estado?: "
-                    +"<p> Este estado quiere decir que actualmente usted esta registrado y reclutado por OPTA, por lo cual podra inscribirse en una de las convocatorias que se encuentren disponibles"
+                    + "<p> ¿Qué quiere decir este estado?: "
+                    +"<p> Este estado quiere decir que actualmente usted está registrado y reclutado por OPTA, por lo cual podrá inscribirse en una de las convocatorias que se encuentren disponibles"
                     +"<p style=\"color: #green; font-\"¡Felicidades por pasar el proceso exitosamente! "
                     + "<br>\n"
                     + "<p style=\"color:#0C0;font-weight: bold;\" > Gracias por formar parte de nuestra comunidad :3 </p> ";
@@ -329,8 +329,8 @@ public class AspirantesControlador implements Serializable {
                     + "<p style=\"text-align: center; color: #307EDF\">\n"
                     + "<p> Sr(a) : "+usu.getNombre1()+" "+usu.getApellido1()
                     + "<p> Tristemente usted no ha sido reclutado por parte de OPTA, su estado actual es RECHAZADO \n"
-                    + "<p> ¿Que quiere decir este estado?: "
-                    +"<p>Este estdo qui que su hoja de vida o su prueba psicotecnica no cumplio con lo que requiere el perfil o no cumple los reuqisitos para ser reclutado"
+                    + "<p> ¿Qué quiere decir este estado?: "
+                    +"<p>Este estado quiere decir que su hoja de vida o su prueba psicotécnica no cumplió con lo que requiere el perfil o no cumple los requisitos para ser reclutado"
                     +"<p style=\"color: #green; font-\"Lamentamos que no pueda ser reclutado por parte de OPTA :( "
                     + "<br>\n"
                     + "<p style=\"color:#0C0;font-weight: bold;\" > Gracias por formar parte de nuestra comunidad</p> ";
@@ -338,18 +338,19 @@ public class AspirantesControlador implements Serializable {
         public String mensajeConEstiloEntrevista(String nombre1,String nombre2){
         return "<h1 style=\"font-size: 20px; color:#0C0; font-weight: bold; text-transform: uppercase ; \">Opta/Durandal" + "</h1>" + "<img src='https://i.ibb.co/3cwRywd/imagen.png'/ style=\"float: left;width: 450px; height:300px;\"><p>"
                     + "<p style=\"text-align: center; color: #307EDF\">\n"
-                    + "<p> Sr(a) : "+nombre1+" "+nombre2
+                    + "<p> Sr(a): "+nombre1+" "+nombre2
                     + "<p> ¡Felicidades! ha sido citado para una entrevista por parte de OPTA y a partir de ahora su estado pasara a CITADO A ENTREVISTA \n"
-                    +"<p> Dia de la citacion: "+dia+" </p>"
-                    +"<p> Hora de la citacion: "+hora+" </p>"
-                    + "<p> ¿Que quiere decir este estado?: "
-                    +"<p> Esto quiere decir que esta citado a una entrevista en la central de OPTA en la fecha y dia indicado"
-                    + "<p> Por otro lado tambien debera realizar la prueba psicotecnica, esta la encontrara iniciando sesion, luego presione el apartado de 'Prueba Psicotecnica' y posteriormente presione en 'Descargar prueba' una vez la realice guardelo como archivo pdf. Por ultimo vuelva al apartado anteriormente menciado y presione ''Subir prueba psicotecnica'' alli ingrese su archivo pdf y listo ya habra entregado la prueba con exito. </p>"
-                    + "<p style=\"font-weight:bold;\"> La prueba tiene como fecha limite de entrega el dia "+dia+"! </p>"
+                    +"<p> Dia de la citación: "+dia+" </p>"
+                    +"<p> Hora de la citación: "+hora+" </p>"
+                    + "<p> ¿Qué quiere decir este estado?: "
+                    +"<p> Esto quiere decir que está citado a una entrevista en la central de OPTA en la fecha y día indicado"
+                    + "<p> Por otro lado también deberá realizar la prueba psicotécnica, está la encontrará iniciando sesión, luego presione el apartado de '’Prueba Psicotécnica'’ y posteriormente presione en 'Descargar prueba' una vez la realice guárdela como archivo pdf. Por último, vuelva al apartado anteriormente mencionado y presione ''Subir prueba psicotécnica'' allí ingrese su archivo pdf y listo ya habrá entregado la prueba con éxito. </p>"
+                    + "<p style=\"font-weight:bold;\"> La prueba tiene como fecha límite de entrega el día "+dia+"! </p>"
                     +"<p style=\"color: #green; font-\"¡Le deseamos la mejor de las suertes en este proceso! "
                     + "<br>\n"
                     + "<p style=\"color:#0C0;font-weight: bold;\" > Gracias por formar parte de nuestra comunidad :3 </p> ";
-    }
+        }
+
     
     //Graficos
     private BarChartModel graficoBarra;

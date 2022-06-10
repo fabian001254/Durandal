@@ -167,7 +167,7 @@ public class AparteContratacionControlador implements Serializable {
             aparte.setEstado("En espera");
             aparte.setIdTipoContrato(tp);
             apartefacade.create(aparte);
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Aparte de contratacion creado con exito! puede ver el estado en CONSULTAR APARTES"));
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "¡Aparte de contratación creado con éxito!, puede ver el estado en CONSULTAR APARTES"));
         } catch (Exception e) {
             System.out.println("Error "+e);
         }
@@ -178,11 +178,11 @@ public class AparteContratacionControlador implements Serializable {
              aparte = apartefacade.find(id);
          }
          if(aparte.getEstado().equals("Rechazado") || aparte.getEstado().equals("Creado")){
-             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Aviso", "El aparte de contratacion no es modificable ya que su estado es "+aparte.getEstado()));
+             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Aviso", "El aparte de contratación no es modificable ya que su estado es "+aparte.getEstado()));
          }else{
              if(op==1){
                  apartefacade.edit(aparte);
-                 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "El aparte se ha modificado con exito"));
+                 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "El aparte se ha modificado con éxito"));
                  aparte = null;
              }else if(op==2){
                  apartefacade.remove(aparte);
@@ -208,13 +208,13 @@ public class AparteContratacionControlador implements Serializable {
     }
      
     public void crearOferta(){
-        String asun = "Nueva oferta de contratacion";
+        String asun = "Nueva oferta de contratación";
         ofertas(1);
         enviarCorreo(asun,1);
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Aparte de contratacion aceptado y oferta creada"));
     }
     public void rechazarOferta(){
-        String asun = "Aparte de contratacion rechazado";
+        String asun = "Aparte de contratación rechazado";
         ofertas(2);
         enviarCorreo(asun,2);        
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Aparte de contratacion rechazado"));
@@ -225,7 +225,7 @@ public class AparteContratacionControlador implements Serializable {
                     + "<p> Se ha generado una oferta </p>\n"                
                     + "<p> El perfil de la oferta es: "+ofertas.getPl()+ " </p>\n" 
                     + "<p> Salario: "+ofertas.getSueldo() +"</p>"
-                    + "<p> Descripcion: "+ofertas.getDescripcion() +"</p> \n"
+                    + "<p> Descripción: "+ofertas.getDescripcion() +"</p> \n"
                     +"<p> Mas datos en el apartado de OFERTAS DE CONTRATACION </p> \n"
                     + "<br>\n"
                     + "<p style=\"color:#0C0;font-weight: bold;\" > Gracias por formar parte de nuestra comunidad</p> ";
@@ -233,11 +233,11 @@ public class AparteContratacionControlador implements Serializable {
     public String mensajeConEstiloRechazar(){
         return "<h1 style=\"font-size: 20px; color:#0C0; font-weight: bold; text-transform: uppercase ; \">Opta/Durandal" + "</h1>" + "<img src='https://i.ibb.co/3cwRywd/imagen.png'/ style=\"float: left;width: 450px; height:300px;\"><p>"
                     + "<p style=\"text-align: center; color: #307EDF\">\n"
-                    + "<p> Se ha rechazado el aparte de contratacion </p>\n"                
+                    + "<p> Se ha rechazado el aparte de contratación </p>\n"                
                     + "<p> El perfil de la oferta es: "+aparte.getPl()+ " </p>\n" 
                     + "<p> Salario: "+aparte.getSueldo() +"</p>"
-                    + "<p> Descripcion: "+aparte.getDescripcion() +"</p> \n"
-                    +"<p> Mas datos en el apartado de OFERTAS DE CONTRATACION </p> \n"
+                    + "<p> Descripción: "+aparte.getDescripcion() +"</p> \n"
+                    +"<p> Mas datos en el apartado de OFERTAS DE CONTRATACIÓN </p> \n"
                     + "<br>\n"
                     + "<p style=\"color:#0C0;font-weight: bold;\" > Gracias por formar parte de nuestra comunidad</p> ";
     }

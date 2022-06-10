@@ -53,7 +53,7 @@ public class especialidadControlador implements Serializable {
             }else{
                 especialidad.getNombreespecialidad();
                 especialidadfacade.create(especialidad);
-                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Especialidad "+especialidad.getNombreespecialidad()+" guardada con exito"));
+                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Especialidad "+especialidad.getNombreespecialidad()+" guardada con éxito"));
                 especialidad.setNombreespecialidad("");
             }
             

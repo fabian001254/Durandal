@@ -45,7 +45,7 @@
   </div>
   <!-- Menu lateral de Navegación -->
   <div class="row">
-    <div class="col-md-3">
+<div class="col-md-3">
       <nav id="Menu" class="d-md-block collapse sidebar pl-3">
         <div class="texto mt-4">
           <a class="nav-link colapsador mt-4" href="gestion_humana.xhtml" role="button">
@@ -58,52 +58,31 @@
           </a>
           <div class="collapse mb-3" id="menu1">
             <ul class="navbar-nav">
-              <h:form>
                 <li class="nav-item"><a href="solicitudes-de-reclutamiento-g.xhtml" class="nav-link"
                     target="principal"><i class='bx bx-grid-alt'></i>Solicitudes</a></li>
-                <li class="nav-item"><a href="consultarEntrevistar.xhtml" class="nav-link mt-1" target="principal"><i
+                <li class="nav-item"><a href="consultarEntrevistar.xhtml" class="nav-link" target="principal"><i
                       class='bx bx-grid-alt'></i>Entrevistas</a></li>
-              </h:form>
             </ul>
-          </div>
-          
+          </div>        
           <a class="nav-link mt-2" data-toggle="collapse" href="#menu3" role="button">
             Calificaciones <i class='bx bxs-down-arrow'></i>
           </a>
           <div class="collapse mb-3" id="menu3">
             <ul class="navbar-nav">
-              <h:form>
+
                 <li class="nav-item"><a href="vercalificaciones.xhtml" class="nav-link"><i class='bx bx-chat'></i>
                     Calificaciones personal</a></li>
-              </h:form>
-              <li class="nav-item"><a href="formulario_de_calificacion.xhtml" class="nav-link"><i
-                    class='bx bx-pie-chart-alt-2'></i> Formulario de calificaciones</a></li>
+                <li class="nav-item"><a href="formulario_de_calificacion.xhtml" class="nav-link"><i
+                      class='bx bx-pie-chart-alt-2'></i> Formulario de calificaciones</a></li>
             </ul>
-          </div>
-          <a class="nav-link mt-2" data-toggle="collapse" href="#menu4" role="button">
-            Pruebas psicotécnicas <i class='bx bxs-down-arrow'></i>
-          </a>
-          <div class="collapse mb-3" id="menu4">
-            <ul class="navbar-nav">
-              <h:form>
-                <li class="nav-item"><a href="pruebas_psicotecnicas.xhtml" class="nav-link"><i class='bx bx-folder'></i>
-                    Realizar pruebas psicotécnicas</a></li>
-              </h:form>
-              <h:form>
-                <li class="nav-item"><a href="consultar_pruebaspsicotecnicas.xhtml" class="nav-link"><i
-                      class='bx bx-folder'></i> Consultar pruebas psicotécnicas</a></li>
-              </h:form>
-            </ul>
-          </div>
+          </div>          
           <a class="nav-link mt-2" data-toggle="collapse" href="#menu5" role="button">
             Apartes de contratación <i class='bx bxs-down-arrow'></i>
           </a>
           <div class="collapse mb-3" id="menu5">
             <ul class="navbar-nav">
-              <h:form>
                 <li class="nav-item"><a href="consultar_aparte_contratacion.xhtml" class="nav-link"><i
                       class='bx bxs-note'></i> Consultar apartes</a></li>
-              </h:form>
             </ul>
           </div>
 
@@ -112,10 +91,8 @@
           </a>
           <div class="collapse mb-3" id="menu6">
             <ul class="navbar-nav">
-              <h:form>
                 <li class="nav-item"><a href="crear_perfil-especialidad.xhtml" class="nav-link"><i
                       class='bx bxs-file-blank'></i> Crear perfil</a></li>
-              </h:form>
             </ul>
           </div>
 
@@ -124,25 +101,19 @@
           </a>
           <div class="collapse mb-3" id="menu7">
             <ul class="navbar-nav">
-              <h:form>
                 <li class="nav-item"><a href="crear_informecontratacion.xhtml" class="nav-link"><i
                       class='bx bx-paperclip'></i> Crear informe de contratación</a></li>
-              </h:form>
-              <h:form>
                 <li class="nav-item"><a href="consultar_infomecontratacion.xhtml" class="nav-link"><i
                       class='bx bx-paperclip'></i> Consultar informe de contratación</a></li>
-              </h:form>
             </ul>
-          </div>          
+          </div>
           <a class="nav-link mt-2" data-toggle="collapse" href="#menu10" role="button">
             Reportes estadísticos <i class='bx bxs-down-arrow'></i>
           </a>
           <div class="collapse mb-3" id="menu10">
             <ul class="navbar-nav">
-              <h:form>
                 <li class="nav-item"><a href="consultar_reportes_estadisticos_gestionhumana.xhtml" class="nav-link"
                     target="principal"><i class='bx bx-cog'></i> Cosultar reportes estadísticos</a></li>
-              </h:form>
             </ul>
           </div>
 
@@ -151,10 +122,8 @@
           </a>
           <div class="collapse mb-3" id="menu11">
             <ul class="navbar-nav">
-              <h:form>
                 <li class="nav-item"><a href="ajustes_gh.xhtml" class="nav-link" target="principal"><i
                       class='bx bx-cog'></i> Configurar cuenta</a></li>
-              </h:form>
             </ul>
           </div>
         </div>
@@ -163,7 +132,7 @@
     <div class="col-md-9">
       <div class="row p-3 justify-content-center text-center">
           <div class="col-md-12">
-              <h2 class="mb-3" style="color: black; font-family: Gilroy-Heavy;">Graficos estadisticas</h2><br/>
+              <h2 class="mb-3" style="color: black; font-family: Gilroy-Heavy;">Gráficos estadísticos</h2><br/>
           </div>
           <div class="col-md-7">
                   <p:chart type="bar" model="#{aspirantesControlador.graficoBarra}"></p:chart>             

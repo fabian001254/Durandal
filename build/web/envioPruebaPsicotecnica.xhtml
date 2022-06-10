@@ -46,21 +46,12 @@
     <div class="col-md-3">
       <nav id="Menu" class="d-md-block collapse sidebar pl-3">
         <div class="texto mt-4">
-          <h:form>
             <a class="nav-link colapsador mt-4" href="personal_no_reclutado.xhtml" role="button">
               <i class='bx bx-send'></i> Página principal
-            </a>
-          </h:form>
-          <h:form>
-            <a class="nav-link colapsador mt-4" href="enviar_solicitud.xhtml" role="button">
-              <i class='bx bx-send'></i> Enviar solicitud de reclutamiento
-            </a>
-          </h:form>
-          <h:form>
+            </a> 
             <a class="nav-link colapsador mt-2" href="consultar_estado.xhtml" role="button">
               <i class='bx bxs-hourglass-top'></i> Consultar estado
             </a>
-          </h:form>
         </div>
       </nav>
     </div>
@@ -69,18 +60,18 @@
 
         <div class="card mt-2">
           <div class="card-header titulo1">
-            <p>Pruebas Psicotecnicas</p>
+            <p>Pruebas Psicotécnicas</p>
           </div>
           <img src="assets/img/hoja_vida.svg" class="card-img-top mt-3" style="width:100%;height: 140px;"></img>
           <div class="card-body">
               <div class="col-md-12 d-flex justify-content-around">
                   <div class="col-md-4" style="border-color: black">
-                      <p>Descarga de prueba psicotecnica</p>
+                      <p>Descarga de prueba psicotécnica</p>
                       <a href="#{psicotecnicasControlador.consultaEntrega(usuariosControlador.usuarioLogeado().numerodocumento)}" class="btn btn-warning">Descargar</a>
                   </div>
                   <div class="col-md-4" style="border-color: black">
                       <h:form enctype="multipart/form-data">
-                            <p>Entrega de prueba psicotecnica</p>
+                            <p>Entrega de prueba psicotécnica</p>
                             <h:inputFile id="ficha" value="#{psicotecnicasControlador.prueba}" required="true"
                               label="Ingrese el archivo" requiredMessage="Subir prueba psicotecnica" style="font-size:15px;" />
                             <p:commandButton value="Subir" actionListener="#{psicotecnicasControlador.subirPrueba(usuariosControlador.usuarioLogeado().numerodocumento)}"  ajax="false"  />

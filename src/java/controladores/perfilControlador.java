@@ -143,7 +143,7 @@ public class perfilControlador implements Serializable {
                 perfil.getPl();
                 perfil.setFichatecnica(pathr);
                 perfilfacade.create(perfil);
-                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Perfil "+perfil.getPl()+" guardado con exito"));
+                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Perfil "+perfil.getPl()+" guardado con éxito"));
                 perfil.setPl("");
                 perfil.setFichatecnica("");
             }

@@ -304,7 +304,7 @@ public class usuariosControlador implements Serializable {
             LocalDate hoy = LocalDate.now();
             Period periodo = Period.between(dian,hoy);
             if(usu!=null || cl!=null){
-                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "Aviso", "Error ya existe un usuario con esta informacion"));
+                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "Aviso", "Error ya existe un usuario con esta información"));
             }else{
                 if(periodo.getYears() >= 18){
                     FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Usuario creado con exito, bienevenid@ "+usuarios.getNombre1()+" "+usuarios.getApellido1()));
@@ -337,7 +337,7 @@ public class usuariosControlador implements Serializable {
             LocalDate hoy = LocalDate.now();
             Period periodo = Period.between(dian,hoy);
             if(usu!=null ){
-                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "Aviso", "Error ya existe un usuario con esta informacion"));
+                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "Aviso", "Error ya existe un usuario con esta información"));
             }else{
                 if(periodo.getYears() >= 18){
                     nombre = hv.getSubmittedFileName();
@@ -381,7 +381,7 @@ public class usuariosControlador implements Serializable {
             aspfacade.edit(aspi);
             enviarCorreoSoli(usuarioLogeado().getCorreo(),usuarioLogeado().getNombre1(),usuarioLogeado().getApellido2());
             FacesContext.getCurrentInstance().getExternalContext().redirect("personal_no_reclutado1.xhtml");
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Ha solicitado con exito su reclutamiento"));
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Ha solicitado con éxito su reclutamiento"));
         } catch (IOException e) {
             System.out.println("Error "+e);
         }
@@ -392,7 +392,7 @@ public class usuariosControlador implements Serializable {
         upload();
         aspirantes.setHojavida(pathr);
         aspfacade.edit(aspirantes);
-        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Se ha actualizado la hoja de vida con exitoss"));
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Se ha actualizado la hoja de vida con éxito"));
     } 
     
     public String pathFoto(Long doc){
@@ -469,12 +469,12 @@ public class usuariosControlador implements Serializable {
             nombre1 = "";
             apellido2 = "";            
         }else{
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Aviso", "Su usuario no se puede restablecer parametros incorrectos"));
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Aviso", "Su usuario no se puede restablecer parámetros incorrectos"));
         }
     }
     public void enviarCorreoRestauracion(Usuarios usurestauracion){
              try {
-                 String asunto = "Restauracion de contraseña";
+                 String asunto = "Restauración de contraseña";
                  String destinatario = usurestauracion.getCorreo();
                  Mailer.send(destinatario,asunto,mensajeConEstiloR(usurestauracion)); 
         } catch (UnsupportedEncodingException e) {
@@ -482,13 +482,14 @@ public class usuariosControlador implements Serializable {
         }
     }
      public String mensajeConEstiloR(Usuarios usurestauracion){
-        return "<h1 style=\"font-size: 20px; color:#0C0; font-weight: bold; text-transform: uppercase ; \">Opta/Durandal" + "</h1>" + "<img src='https://i.ibb.co/3cwRywd/imagen.png'/ style=\"float: left;width: 450px; height:300px;\"><p>"
+               return "<h1 style=\"font-size: 20px; color:#0C0; font-weight: bold; text-transform: uppercase ; \">Opta/Durandal" + "</h1>" + "<img src='https://i.ibb.co/3cwRywd/imagen.png'/ style=\"float: left;width: 450px; height:300px;\"><p>"
                     + "<p style=\"text-align: center; color: #307EDF\">\n"
                     + "<p> Sr@: " +usurestauracion.getNombre1()+" "+ usurestauracion.getApellido1()+"</p>\n"                
-                    + "<br>Usted solicito la restauracion de su contraseña el dia " + LocalDate.now() + ""
+                    + "<br>Usted solicito la restauración de su contraseña el día " + LocalDate.now() + ""
                     + "<br><p style='font-weigth:bold'>Su contraseña es: "+usurestauracion.getClave() +"</p>"
-                    +" <br>Si no lo solicito haga caso omiso al correo de restauracion"
+                    +" <br>Si no lo solicito haga caso omiso al correo de restauración"
                     + "<p style=\"color:#0C0;font-weight: bold;\" > Gracias por formar parte de nuestra comunidad</p> ";
+
     }
     
     //--------------
@@ -557,7 +558,7 @@ public class usuariosControlador implements Serializable {
                     + "<p> Rol al que se registro: Cliente \n"
                     + "<p> Nit de la empresa: "+clientes.getNit()+ "\n"
                     + "<p> Objeto social de la empresa: "+clientes.getObjetosocial()+ "\n"
-                    + "<p> Razon social de la empresa: "+clientes.getRazonsocial()+ "\n"
+                    + "<p> Razón social de la empresa: "+clientes.getRazonsocial()+ "\n"
                     + "</p> \n"
                     + "<br>\n"
                     + "<p style=\"color:#0C0;font-weight: bold;\" > Gracias por formar parte de nuestra comunidad :3 </p> ";
@@ -582,19 +583,20 @@ public class usuariosControlador implements Serializable {
     }
 
     public String mensajeConEstiloSoli(String nombre1,String nombre2){
-        return "<h1 style=\"font-size: 20px; color:#0C0; font-weight: bold; text-transform: uppercase ; \">Opta/Durandal" + "</h1>" + "<img src='https://i.ibb.co/3cwRywd/imagen.png'/ style=\"float: left;width: 450px; height:300px;\"><p>"
+               return "<h1 style=\"font-size: 20px; color:#0C0; font-weight: bold; text-transform: uppercase ; \">Opta/Durandal" + "</h1>" + "<img src='https://i.ibb.co/3cwRywd/imagen.png'/ style=\"float: left;width: 450px; height:300px;\"><p>"
                     + "<p style=\"text-align: center; color: #307EDF\">\n"
-                    + "<p> Sr(a) : "+nombre1+" "+nombre2
+                    + "<p> Sr(a): "+nombre1+" "+nombre2
                     + "<p> Usted se solicito el reclutamiento por parte de opta y su estado actual es EN ESPERA \n"
-                    + "<p> ¿Que quiere decir este estado?: "
-                    +"<p> El estado EN ESPERA es cuando OPTA revisara su hoja de vida y determinara si es apto para ser reclutado, de ser asi se enviaran las respectivas pruebas psicotecnicas, de otro modo, sera rechazado dando asi por fianlizado el proceso"
+                    + "<p> ¿Qué quiere decir este estado?: "
+                    +"<p> El estado EN ESPERA es cuando OPTA revisara su hoja de vida y determinara si es apto para ser reclutado, de ser así se enviarán las respectivas pruebas psicotécnicas, de otro modo, será rechazado dando así por finalizado el proceso"
                     +"<p style=\"color: #green; font-\"¡Le deseamos la mejor de las suertes en este proceso! "
                     + "<br>\n"
                     + "<p style=\"color:#0C0;font-weight: bold;\" > Gracias por formar parte de nuestra comunidad :3 </p> ";
+
     }
     public void enviarCorreoSoli(String correo,String nombre1,String nombre2){
              try {
-                 String asunto = "Solicitud enviada con exito";
+                 String asunto = "Solicitud enviada con éxito";
                  String destinatario = correo;
                  Mailer.send(destinatario,asunto,mensajeConEstiloSoli(nombre1,nombre2)); 
         } catch (UnsupportedEncodingException e) {
@@ -606,7 +608,7 @@ public class usuariosControlador implements Serializable {
         try {            
             List<String> lista = usuariosfacade.listarUsuarios();
             Mailers.send(lista, asun,mensajeConEstilo());
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Se ha enviado con exito el correo"));
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Se ha enviado con éxito el correo"));
         } catch (UnsupportedEncodingException e) {
             System.out.println("Error "+e);
         }
@@ -691,7 +693,7 @@ public class usuariosControlador implements Serializable {
                         gestionh.setNumerodocumento(usuarios.getNumerodocumento());
                         gestionh.setIdDeDocumento(usuarios.getIdDeDocumento());
                         ghfacade.create(gestionh);
-                        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Se ha creado con exito el usuario de gestion humana"));
+                        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Se ha creado con éxito el usuario de gestión humana"));
 
                     }else{
                         gestionc.setCargo(cargo); 
@@ -750,7 +752,7 @@ public class usuariosControlador implements Serializable {
                 if(pin == pin2){
                     usuarios.setCorreo(correoC);
                     usuariosfacade.edit(usuarios);
-                    FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Se ha actualizado el correo con exito"));
+                    FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Se ha actualizado el correo con éxito"));
                     pin = 0;
                     usuarios = new Usuarios();
                 }else{
@@ -782,7 +784,7 @@ public class usuariosControlador implements Serializable {
                     usuariosfacade.edit(usuarios);
                     FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Se ha actualizado la contrseña con éxito"));
                 }else{
-                    FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Aviso", "La contraseña no coincide con la actual, verifique y vuelva a realizarlo"));
+                    FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Aviso", "La contraseña no coincide con la actual, verifique y vuelva a intentarlo"));
                 }
             }
             
@@ -856,10 +858,10 @@ public class usuariosControlador implements Serializable {
                         out.close();
                         usuarios.setFoto(pathr);
                         usuariosfacade.edit(usuarios);
-                        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Se ha actualizado la foto con exito, la foto puede tardar un momento en cargar, por favor espere"));
-                        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Si han pasado mas de 5 minutos y no ha cargado la foto subala nuevamente y recargue la pagina esto solucionara el error"));
+                        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Se ha actualizado la foto con éxito, la foto puede tardar un momento en cargar, por favor espere"));
+                        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Si han pasado más de 5 minutos y no ha cargado la foto subala nuevamente y recargue la página esto solucionara el error"));
                     }else{
-                        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Aviso", "La foto debe estar en formato JPG o PNG"));
+                        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Aviso", "La foto debe estar en formato JPG"));
                     }                 
                 } catch (IOException e) {
                     System.out.println("Error "+e);

@@ -132,23 +132,29 @@ public class InformeDeContratacionControlador implements Serializable {
         try {
             Date fecha1 = Date.valueOf(fechai);
             Date fecha2 = Date.valueOf(fechaf);
-            info.setNumerodocumentoaspirante(aspirantesfacade.find(aspirantes.getNumerodocumento()));
-            info.setNumerodocumentocliente(clientesfacade.find(clientes.getNumerodocumento()));
-            info.setFechainicio(fecha1);
-            info.setFechafinal(fecha2);           
-            InformeDeContratacion in = infofacade.consulta(info);
-            if(in != null){
-                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Aviso", "Error este informe de contratacion ya existe!"));
-            }else{                
-                infofacade.create(info);
-                Aspirantes asp = aspirantesfacade.find(aspirantes.getNumerodocumento());
-                if(asp.getEstado().equals("Inscrito a oferta")){
-                        insofertas = insofertasfacade.consultaA(asp);
-                        insofertasfacade.remove(insofertas);
+            Aspirantes test = aspirantesfacade.find(aspirantes.getNumerodocumento()) ;
+            if(test == null ){
+                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Aviso", "¡Este aspirante no existe verifique la información!"));
+            }else{
+                 info.setNumerodocumentoaspirante(aspirantesfacade.find(aspirantes.getNumerodocumento()));
+                info.setNumerodocumentocliente(clientesfacade.find(clientes.getNumerodocumento()));
+                info.setFechainicio(fecha1);
+                info.setFechafinal(fecha2);           
+                InformeDeContratacion in = infofacade.consulta(info);
+                if(in != null){
+                    FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Aviso", "¡Error este informe de contratación ya existe!"));
+                }else{                
+                    infofacade.create(info);
+                    Aspirantes asp = aspirantesfacade.find(aspirantes.getNumerodocumento());
+                    if(asp.getEstado().equals("Inscrito a oferta")){
+                            insofertas = insofertasfacade.consultaA(asp);
+                            insofertasfacade.remove(insofertas);
+                    }
+                    asp.setEstado("Contratado");
+                    aspirantesfacade.edit(asp);
+                    FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "¡Informe de contratación creado con éxito!"));
                 }
-                asp.setEstado("Contratado");
-                aspirantesfacade.edit(asp);
-                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Informe de contratacion creado con exito!"));
+
             }
             
         } catch (Exception e) {
@@ -159,7 +165,7 @@ public class InformeDeContratacionControlador implements Serializable {
     public void operar(){
         try {
             infofacade.edit(info);
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Informe de contratacion ha actualizado con exito!"));
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Informe de contratación ha actualizado con éxito!"));
         } catch (Exception e) {
             System.out.println("Error "+e);
         }
@@ -168,7 +174,7 @@ public class InformeDeContratacionControlador implements Serializable {
         try {
             buscarInfo(id,doc1,doc2);
             infofacade.remove(info);
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Informe de contratacion se ha borrado con exito!"));
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Informe de contratación se ha borrado con éxito!"));
         } catch (Exception e) {
             System.out.println("Error "+e);
         }

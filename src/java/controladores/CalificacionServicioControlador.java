@@ -187,7 +187,7 @@ public class CalificacionServicioControlador implements Serializable {
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
         String hoy = formatter.format(date);  
         if(!formatter.format(info.getFechafinal()).equals(hoy)){
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "Aviso", "Tiene que crear el formulario el mismo dia que finaliza el contrato"+date));
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "Aviso", "Tiene que crear el formulario el mismo día que finaliza el contrato"+date));
         }else{
             aspirantes = aspirantesfacade.find(info.getNumerodocumentoaspirante().getNumerodocumento());
             aspirantes.setEstado("Reclutado");
@@ -200,7 +200,7 @@ public class CalificacionServicioControlador implements Serializable {
             caliserviciofacade.create(caliservicio);
             aspirantesfacade.edit(aspirantes);
             enviarCorreo("Calificar el servicio");
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Se ha enviado con exito el formulario"));
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Se ha enviado con éxito el formulario"));
         }
     }
     //Correos
@@ -220,26 +220,28 @@ public class CalificacionServicioControlador implements Serializable {
     }
     
      public String mensajeConEstilo(String nombre1,String nombre2,String nombre11,String nombre22){
-        return "<h1 style=\"font-size: 20px; color:#0C0; font-weight: bold; text-transform: uppercase ; \">Opta/Durandal" + "</h1>" + "<img src='https://i.ibb.co/3cwRywd/imagen.png'/ style=\"float: left;width: 450px; height:300px;\"><p>"
+       return "<h1 style=\"font-size: 20px; color:#0C0; font-weight: bold; text-transform: uppercase ; \">Opta/Durandal" + "</h1>" + "<img src='https://i.ibb.co/3cwRywd/imagen.png'/ style=\"float: left;width: 450px; height:300px;\"><p>"
                     + "<p style=\"text-align: center; color: #307EDF\">\n"
                     + "<p> Sr(a) : "+nombre1+" "+nombre2
                     + "<p> El contrato con "+nombre11 + " "+ nombre22+ "ha finalizado"+ "\n"
-                    +"<p> Agradeceriamos su calificacion en la pagina de OPTA sobre el personal, con esto nos ayudara a mejorar </p>"
+                    +"<p> Agradeceríamos su calificación en la página de OPTA sobre el personal, con esto nos ayudara a mejorar </p>"
                     + "<p> ¿Como hacer esto?: </p>"
-                    +"<p> Inicie sesion y dirijase a la parte de 'Calificar personal' alli vera al personal que contrato y podra calificarle en algunos aspectos de 1 a 5 donde 1 es la mas baja y 5 la mas alta </p>"
+                    +"<p> Inicie sesión y dirijase a la parte de '’Calificar personal’' allí vera al personal que contrato y podrá calificarle en algunos aspectos de 1 a 5 donde 1 es la más baja y 5 la más alta </p>"
                     + "<br>\n"
                     + "<p style=\"color:#0C0;font-weight: bold;\" > Gracias por formar parte de nuestra comunidad :3 </p> ";
+
     }
      public String mensajeConEstilo1(String nombre1,String nombre2,String nombre11){
-        return "<h1 style=\"font-size: 20px; color:#0C0; font-weight: bold; text-transform: uppercase ; \">Opta/Durandal" + "</h1>" + "<img src='https://i.ibb.co/3cwRywd/imagen.png'/ style=\"float: left;width: 450px; height:300px;\"><p>"
+            return "<h1 style=\"font-size: 20px; color:#0C0; font-weight: bold; text-transform: uppercase ; \">Opta/Durandal" + "</h1>" + "<img src='https://i.ibb.co/3cwRywd/imagen.png'/ style=\"float: left;width: 450px; height:300px;\"><p>"
                     + "<p style=\"text-align: center; color: #307EDF\">\n"
-                    + "<p> Sr(a) : "+nombre1+" "+nombre2
+                    + "<p> Sr(a): "+nombre1+" "+nombre2
                     + "<p> El contrato con "+nombre11+" ha finalizado"+ "\n"
                     + "<p> Su estado actual pasara a ser RECLUTADO </p>"                    
-                    + "<p> ¿Que quiere decir este estado?: "
-                    +"<p> Este estado quiere decir que actualmente usted esta registrado y reclutado por OPTA, por lo cual podra inscribirse en una de las convocatorias que se encuentren disponibles"                    
+                    + "<p> ¿Qué quiere decir este estado?: "
+                    +"<p> Este estado quiere decir que actualmente usted está registrado y reclutado por OPTA, por lo cual podrá inscribirse en una de las convocatorias que se encuentren disponibles"                    
                     + "<br>\n"
                     + "<p style=\"color:#0C0;font-weight: bold;\" > Gracias por formar parte de nuestra comunidad :3 </p> ";
+
     }
     
     //Graficos

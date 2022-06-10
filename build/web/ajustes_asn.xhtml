@@ -45,29 +45,18 @@
   </div>
   <!-- Menu lateral de Navegación -->
   <div class="row">
-    <div class="col-md-3">
+      <div class="col-md-3">
       <nav id="Menu" class="d-md-block collapse sidebar pl-3">
         <div class="texto mt-4">
-          <h:form>
             <a class="nav-link colapsador mt-4" href="personal_no_reclutado.xhtml" role="button">
               <i class='bx bx-send'></i> Página principal
             </a>
-          </h:form>
-          <h:form>
-            <a class="nav-link colapsador mt-4" href="enviar_solicitud.xhtml" role="button">
-              <i class='bx bx-send'></i> Enviar solicitud de reclutamiento
-            </a>
-          </h:form>
-          <h:form>
             <a class="nav-link colapsador mt-2" href="consultar_estado.xhtml" role="button">
               <i class='bx bxs-hourglass-top'></i> Consultar estado
             </a>
-          </h:form>
-           <h:form>
             <a class="nav-link colapsador mt-2" href="ajustes_asn.xhtml" role="button">
-              <i class='bx bx-cog'></i> Ajustes de cuenta
+              <i class="bx bx-cog"></i> Ajustes de cuenta
             </a>
-          </h:form>
         </div>
       </nav>
     </div>
@@ -233,7 +222,7 @@
      <p:dialog header="Cambio de direccion" styleClass="justify-content-center text-center w-50" id="dlgPer3"
         widgetVar="wdlgPer3">
         <h:form>
-            <p:outputLabel value="Cambios de direccion´primero se pondra su direccion actual y luego al que sera cambiado" style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
+            <p:outputLabel value="Cambios de dirección primero se pondra su dirección actual y luego al que sera cambiado" style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
              <div class="form-group"> 
                   <p:outputLabel for="old" value="Direccion actual: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
                    <div class="form-group">
@@ -304,7 +293,7 @@
                     </div>
                 </div>
               
-                          <p:commandButton value="Cambiar dias habiles" 
+                          <p:commandButton value="Cambiar días habiles" 
                                            actionListener="#{usuariosControlador.cambioDias()}"
                                                class=" mb-3" 
                                               ajax="false"/> 
