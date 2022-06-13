@@ -173,7 +173,7 @@
      <p:dialog header="Cambio de contraseña" styleClass="justify-content-center text-center w-50" id="dlgPer1"
         widgetVar="wdlgPer1">
         <h:form>
-            <p:outputLabel value="Ingrese su contraseña actual y la nueva con esto se hara el cambio correspondiente" style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
+            <p:outputLabel value="Ingrese su contraseña actual y la nueva con esto se hará el cambio correspondiente" style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
              <div class="form-group"> 
                   <p:outputLabel for="old" value="Ingrese la contraseña actual: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
                    <div class="form-group">
@@ -211,7 +211,7 @@
              <div class="form-group"> 
                   <p:outputLabel for="old" value="Teléfono actual: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
                    <div class="form-group">
-                       <p:inputText id="old" value="#{usuariosControlador.usuarios.telefono}" disabled="true" required="true" requiredMessage="No ha especificado la contraseña anterior" style="width: auto " />     
+                       <p:inputText id="old" value="#{usuariosControlador.usuarioLogeado().telefono}" disabled="true" required="true" requiredMessage="No ha especificado la contraseña anterior" style="width: auto " />     
               </div>
              </div>
                 <div class="form-group">  
@@ -243,7 +243,7 @@
              <div class="form-group"> 
                   <p:outputLabel for="old" value="Dirección actual: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
                    <div class="form-group">
-                       <p:inputText id="old" value="#{usuariosControlador.usuarios.direccion}" disabled="true" required="true" requiredMessage="No ha especificado la contraseña anterior" style="width: auto " />     
+                       <p:inputText id="old" value="#{usuariosControlador.usuarioLogeado().direccion}" disabled="true" required="true" requiredMessage="No ha especificado la contraseña anterior" style="width: auto " />     
               </div>
              </div>
                 <div class="form-group">  

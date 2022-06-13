@@ -18,8 +18,8 @@ import javax.mail.internet.MimeMultipart;
 public class Mailers {
 public static void send(List<String> usus,String asunto,String mensaje) throws UnsupportedEncodingException{
     
-final String user= "optadurandal@gmail.com";//cambiará en consecuencia al servidor utilizado
-final String pass= "OptaDurandal00";
+final String user= "optadurandal@outlook.com";//cambiará en consecuencia al servidor utilizado
+final String pass= "Gaes1Durandal00";
 
 //1st paso) Obtener el objeto de sesión
 

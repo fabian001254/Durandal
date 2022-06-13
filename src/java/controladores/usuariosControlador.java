@@ -713,6 +713,7 @@ public class usuariosControlador implements Serializable {
     public void buscarUsuarioT(Long doc){
                usuarios = usuariosfacade.find(doc);
      }  
+    
     public void buscarAspiranteB(Long doc){
                aspirantes = aspfacade.find(doc);
      }      

@@ -135,14 +135,14 @@
           <div class="col-md-12 d-block mt-2" >
               <h:form styleClass="mb-0">                         
                  <h4 class="mb-3" style="font-family: Gilroy-Heavy;">CAMBIAR TELÉFONO</h4>                 
-                 <p:commandButton value="Cambiar telefono" onclick="PF('wdlgPer2').show()" immediate="true" actionListener="#{usuariosControlador.buscarUsuarioT(usuariosControlador.usuarioLogeado().numerodocumento)}" class=" mb-3"/> 
+                 <p:commandButton value="Cambiar teléfono" onclick="PF('wdlgPer2').show()" immediate="true" actionListener="#{usuariosControlador.buscarUsuarioT(usuariosControlador.usuarioLogeado().numerodocumento)}" class=" mb-3"/> 
               </h:form> 
           </div> 
           
          <div class="col-md-12 d-block mt-2" >
               <h:form styleClass="mb-0">                         
                  <h4 class="mb-3" style="font-family: Gilroy-Heavy;">CAMBIAR DIRECCIÓN</h4>                 
-                 <p:commandButton value="Cambiar direccion" onclick="PF('wdlgPer3').show()" immediate="true" actionListener="#{usuariosControlador.buscarUsuarioT(usuariosControlador.usuarioLogeado().numerodocumento)}" class=" mb-3"/> 
+                 <p:commandButton value="Cambiar dirección" onclick="PF('wdlgPer3').show()" immediate="true" actionListener="#{usuariosControlador.buscarUsuarioT(usuariosControlador.usuarioLogeado().numerodocumento)}" class=" mb-3"/> 
               </h:form> 
          </div> 
           
@@ -233,7 +233,7 @@
              <div class="form-group"> 
                   <p:outputLabel for="old" value="Teléfono actual: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
                    <div class="form-group">
-                       <p:inputText id="old" value="#{usuariosControlador.usuarios.telefono}" disabled="true" required="true" requiredMessage="No ha especificado la contraseña anterior" style="width: auto " />     
+                       <p:inputText id="old" value="#{usuariosControlador.usuarioLogeado().telefono}" disabled="true" required="true" requiredMessage="No ha especificado la contraseña anterior" style="width: auto " />     
               </div>
              </div>
                 <div class="form-group">  
@@ -263,9 +263,9 @@
         <h:form>
             <p:outputLabel value="Cambios de dirección primero se pondra su dirección actual y luego al que sera cambiado" style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
              <div class="form-group"> 
-                  <p:outputLabel for="old" value="Direccion actual: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
+                  <p:outputLabel for="old" value="Dirección actual: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
                    <div class="form-group">
-                       <p:inputText id="old" value="#{usuariosControlador.usuarios.direccion}" disabled="true" required="true" requiredMessage="No ha especificado la contraseña anterior" style="width: auto " />     
+                       <p:inputText id="old" value="#{usuariosControlador.usuarioLogeado().direccion}" disabled="true" required="true" requiredMessage="No ha especificado la contraseña anterior" style="width: auto " />     
               </div>
              </div>
                 <div class="form-group">  

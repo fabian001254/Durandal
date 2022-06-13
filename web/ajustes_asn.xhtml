@@ -67,7 +67,7 @@
           <h1 class="mb-3" style="color: black; font-family: Gilroy-Heavy;">AJUSTES DE CUENTA</h1>
           <div class="col-md-12 d-block mt-2" >
               <h:form styleClass="mb-0">                         
-                 <h4 class="mb-3" style="font-family: Gilroy-Heavy;">CAMBIAR CORREO ELECTRONICO</h4>                 
+                 <h4 class="mb-3" style="font-family: Gilroy-Heavy;">CAMBIAR CORREO ELECTRÓNICO</h4>                 
                  <p:commandButton value="Cambiar correo" onclick="PF('wdlgPer').show()" immediate="true" actionListener="#{usuariosControlador.buscarUsuario(usuariosControlador.usuarioLogeado().numerodocumento)}" class=" mb-3"/> 
               </h:form> 
           </div>
@@ -82,28 +82,28 @@
           
           <div class="col-md-12 d-block mt-2" >
               <h:form styleClass="mb-0">                         
-                 <h4 class="mb-3" style="font-family: Gilroy-Heavy;">CAMBIAR TELEFONO</h4>                 
+                 <h4 class="mb-3" style="font-family: Gilroy-Heavy;">CAMBIAR TELÉFONO</h4>                 
                  <p:commandButton value="Cambiar telefono" onclick="PF('wdlgPer2').show()" immediate="true" actionListener="#{usuariosControlador.buscarUsuarioT(usuariosControlador.usuarioLogeado().numerodocumento)}" class=" mb-3"/> 
               </h:form> 
           </div> 
           
          <div class="col-md-12 d-block mt-2" >
               <h:form styleClass="mb-0">                         
-                 <h4 class="mb-3" style="font-family: Gilroy-Heavy;">CAMBIAR DIRECCION</h4>                 
+                 <h4 class="mb-3" style="font-family: Gilroy-Heavy;">CAMBIAR DIRECCIÓN</h4>                 
                  <p:commandButton value="Cambiar direccion" onclick="PF('wdlgPer3').show()" immediate="true" actionListener="#{usuariosControlador.buscarUsuarioT(usuariosControlador.usuarioLogeado().numerodocumento)}" class=" mb-3"/> 
               </h:form> 
          </div>           
           
           <div class="col-md-12 d-block mt-2" >
               <h:form styleClass="mb-0">                         
-                 <h4 class="mb-3" style="font-family: Gilroy-Heavy;">CAMBIAR DIAS HABILES</h4>                 
+                 <h4 class="mb-3" style="font-family: Gilroy-Heavy;">CAMBIAR DÍAS HÁBILES</h4>                 
                  <p:commandButton value="Cambiar dias habiles" onclick="PF('wdlgPer5').show()" actionListener="#{usuariosControlador.buscarAspiranteB(usuariosControlador.usuarioLogeado().numerodocumento)}"   class=" mb-3"/> 
               </h:form> 
           </div>  
           
           <div class="col-md-12 d-block mt-2" >
               <h:form styleClass="mb-0">                         
-                 <h4 class="mb-3" style="font-family: Gilroy-Heavy;">CAMBIAR HORAS HABILES</h4>                 
+                 <h4 class="mb-3" style="font-family: Gilroy-Heavy;">CAMBIAR HORAS HÁBILES</h4>                 
                  <p:commandButton value="Cambiar dias habiles" onclick="PF('wdlgPer6').show()" actionListener="#{usuariosControlador.buscarAspiranteB(usuariosControlador.usuarioLogeado().numerodocumento)}" class=" mb-3"/> 
               </h:form> 
           </div> 
@@ -122,12 +122,12 @@
    <p:dialog header="Cambio de correo" styleClass="justify-content-center text-center w-50" id="dlgPer"
         widgetVar="wdlgPer">
         <h:form>
-            <p:outputLabel value="Ingrese el pin que fue enviado a su correo electronico, si falla tendra que volver a escribir el nuevo codigo enviado " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
+            <p:outputLabel value="Ingrese el pin que fue enviado a su correo electrónico, si falla tendra que volver a escribir el nuevo código enviado " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
              
                 <div class="form-group">  
-                     <p:outputLabel for="Correo2" value="Ingrese el nuevo correo electronico: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
+                     <p:outputLabel for="Correo2" value="Ingrese el nuevo correo electrónico: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
                      <div class="form-group">
-                         <p:inputText id="Correo2" value="#{usuariosControlador.correoC}" required="true" requiredMessage="Ingrese el nuevo correo electronico de cambio" style="width: auto " />
+                         <p:inputText id="Correo2" value="#{usuariosControlador.correoC}" required="true" requiredMessage="Ingrese el nuevo correo electrónico de cambio" style="width: auto " />
                             <p:message for="Correo2" style="color: red;"/>                   
                     </div>
                 </div>
@@ -187,18 +187,18 @@
               </h:form>
       </p:dialog>
   
-      <p:dialog header="Cambio de telefono" styleClass="justify-content-center text-center w-50" id="dlgPer2"
+      <p:dialog header="Cambio de teléfono" styleClass="justify-content-center text-center w-50" id="dlgPer2"
         widgetVar="wdlgPer2">
         <h:form>
-            <p:outputLabel value="Cambios de telefono´primero se pondra su telefono actual y luego al que sera cambiado" style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
+            <p:outputLabel value="Cambios de teléfono primero se pondra su teléfono actual y luego al que sera cambiado" style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
              <div class="form-group"> 
-                  <p:outputLabel for="old" value="Telefono actual: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
+                  <p:outputLabel for="old" value="Teléfono actual: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
                    <div class="form-group">
-                       <p:inputText id="old" value="#{usuariosControlador.usuarios.telefono}" disabled="true" required="true" requiredMessage="No ha especificado la contraseña anterior" style="width: auto " />     
+                       <p:inputText id="old" value="#{usuariosControlador.usuarioLogeado().telefono}" disabled="true" required="true" requiredMessage="No ha especificado la contraseña anterior" style="width: auto " />     
               </div>
              </div>
                 <div class="form-group">  
-                     <p:outputLabel for="nueva" value="Ingrese el nuevo telefono: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
+                     <p:outputLabel for="nueva" value="Ingrese el nuevo teléfono: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
                      <div class="form-group">
                          <p:inputText id="nueva" value="#{usuariosControlador.telefonoN}" required="true" requiredMessage="No se ha especificado la nueva contraseña" style="width: auto " />
                             <p:message for="nueva" style="color: red;"/>                   
@@ -206,7 +206,7 @@
                 </div>
               
 
-                          <p:commandButton value="Cambiar telefono" 
+                          <p:commandButton value="Cambiar teléfono" 
                                            actionListener="#{usuariosControlador.CambioTelefono()}"
                                                class=" mb-3" 
                                               ajax="false"/> 
@@ -219,18 +219,18 @@
               </h:form>
       </p:dialog>
   
-     <p:dialog header="Cambio de direccion" styleClass="justify-content-center text-center w-50" id="dlgPer3"
+     <p:dialog header="Cambio de dirección" styleClass="justify-content-center text-center w-50" id="dlgPer3"
         widgetVar="wdlgPer3">
         <h:form>
             <p:outputLabel value="Cambios de dirección primero se pondra su dirección actual y luego al que sera cambiado" style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
              <div class="form-group"> 
                   <p:outputLabel for="old" value="Direccion actual: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
                    <div class="form-group">
-                       <p:inputText id="old" value="#{usuariosControlador.usuarios.direccion}" disabled="true" required="true" requiredMessage="No ha especificado la contraseña anterior" style="width: auto " />     
+                       <p:inputText id="old" value="#{usuariosControlador.usuarioLogeado().direccion}" disabled="true" required="true" requiredMessage="No ha especificado la contraseña anterior" style="width: auto " />     
               </div>
              </div>
                 <div class="form-group">  
-                     <p:outputLabel for="nueva" value="Ingrese la nueva direccion: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
+                     <p:outputLabel for="nueva" value="Ingrese la nueva dirección: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
                      <div class="form-group">
                          <p:inputText id="nueva" value="#{usuariosControlador.direccionN}" required="true" requiredMessage="No se ha especificado la nueva contraseña" style="width: auto " />
                             <p:message for="nueva" style="color: red;"/>                   
@@ -238,7 +238,7 @@
                 </div>
               
 
-                          <p:commandButton value="Cambiar direccion" 
+                          <p:commandButton value="Cambiar dirección" 
                                            actionListener="#{usuariosControlador.CambioDireccion()}"
                                                class=" mb-3" 
                                               ajax="false"/> 
@@ -254,7 +254,7 @@
   <p:dialog header="Cambio de foto de perfil" styleClass="justify-content-center text-center w-50" id="dlgPer4"
         widgetVar="wdlgPer4">
       <h:form enctype="multipart/form-data">
-            <p:outputLabel value="Para hacer el cambio de fotografia ingrese la nueva en el cuadro de anajo" style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
+            <p:outputLabel value="Para hacer el cambio de fotografía ingrese la nueva en el cuadro de abajo" style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
             <div class="form-group">
                 <label for="ficha">Foto (Solo en formato JPG)</label>
              <h:inputFile id="ficha" value="#{usuariosControlador.foto}" required="true" label="Ingrese el archivo"
@@ -275,25 +275,25 @@
 
               </h:form>
       </p:dialog>
-    <p:dialog header="Cambio de dias habiles" styleClass="justify-content-center text-center w-50" id="dlgPer5"
+    <p:dialog header="Cambio de días hábiles" styleClass="justify-content-center text-center w-50" id="dlgPer5"
         widgetVar="wdlgPer5">
      <h:form>
             
              <div class="form-group"> 
-                  <p:outputLabel for="old" value="Dias habiles actuales: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
+                  <p:outputLabel for="old" value="Días hábiles actuales: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
                    <div class="form-group">
                        <p:inputText id="old" value="#{usuariosControlador.buscarAspiranteT(usuariosControlador.usuarioLogeado().numerodocumento)}" disabled="true" required="true"  style="width: auto " />     
               </div>
              </div>
                 <div class="form-group">  
-                     <p:outputLabel for="nueva" value="Nuevos dias habiles: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
+                     <p:outputLabel for="nueva" value="Nuevos días hábiles: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
                      <div class="form-group">
-                         <p:inputText id="nueva" value="#{usuariosControlador.dias}" required="true" requiredMessage="No se ha especificado los dias por los cuales estara disponible" style="width: auto " />
+                         <p:inputText id="nueva" value="#{usuariosControlador.dias}" required="true" requiredMessage="No se ha especificado los días por los cuales estará disponible" style="width: auto " />
                             <p:message for="nueva" style="color: red;"/>                   
                     </div>
                 </div>
               
-                          <p:commandButton value="Cambiar días habiles" 
+                          <p:commandButton value="Cambiar días hábiles" 
                                            actionListener="#{usuariosControlador.cambioDias()}"
                                                class=" mb-3" 
                                               ajax="false"/> 
@@ -307,7 +307,7 @@
       </p:dialog>
   
   
-  <p:dialog header="Cambio de horas habiles" styleClass="justify-content-center text-center w-50" id="dlgPer6"
+  <p:dialog header="Cambio de horas hábiles" styleClass="justify-content-center text-center w-50" id="dlgPer6"
         widgetVar="wdlgPer6">
      <h:form>
             
@@ -344,7 +344,7 @@
                </div>
                <div class="row">
                 <div class="form-group">  
-                  <p:outputLabel for="nueva2" value="Nueva hora fianl: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
+                  <p:outputLabel for="nueva2" value="Nueva hora final: " style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;"/>                    
                   <div class="form-group">
                       <p:datePicker id="nueva2" value="#{usuariosControlador.asp.horafinal}" required="true"
                       requiredMessage="Debe especificar la hora final"  timeOnly="true" pattern="HH:mm" />

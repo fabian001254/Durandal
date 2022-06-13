@@ -55,7 +55,7 @@ public class InformeDeContratacionFacade extends AbstractFacade<InformeDeContrat
              Query consulta;
              consulta = em.createQuery("SELECT asp FROM InformeDeContratacion asp WHERE asp.numerodocumentoaspirante=:doc");
              consulta.setParameter("doc",as);
-             usu=(List<InformeDeContratacion>)consulta.getResultList().get(0);
+             usu=(List<InformeDeContratacion>)consulta.getResultList();
              
          } catch (Exception e) {
              System.out.println("Error: "+e.getMessage());
