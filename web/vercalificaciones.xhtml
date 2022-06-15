@@ -145,7 +145,7 @@
                   <p:inputText id="globalFilter" onkeyup="PF('wtOfertas').filter()" />
                 </div>
             </f:facet>
-            <p:column headerText="Numero del aspirante" filterMatchMode="contains">
+            <p:column headerText="Número del aspirante" filterMatchMode="contains">
                 <p:outputLabel value="#{of.documento}" />
             </p:column>
             <p:column headerText="Nombre del aspirante" filterMatchMode="contains">
@@ -154,7 +154,7 @@
             <p:column headerText="Perfil" filterMatchMode="contains">
                 <p:outputLabel value="#{calificacionServicioControlador.buscarPl(of.documento)}" />
             </p:column>
-              <p:column headerText="Calificacion de promedio"  filterMatchMode="contains">
+              <p:column headerText="Calificación de promedio"  filterMatchMode="contains">
                   <p:outputLabel value="#{of.promedio} / 5" />
             </p:column>
           </p:dataTable>
