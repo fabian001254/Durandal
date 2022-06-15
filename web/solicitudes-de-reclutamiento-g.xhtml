@@ -156,12 +156,12 @@
                 filterBy="#{soli.idPerfil.pl}">
                 <p:outputLabel value="#{soli.idPerfil.pl}" />
               </p:column>
-              <p:column headerText="Especializacion" filterMatchMode="contains"
+              <p:column headerText="Especialización" filterMatchMode="contains"
                 sortBy="#{soli.idEspecializacion.nombreespecialidad}"
                 filterBy="#{soli.idEspecializacion.nombreespecialidad}">
                 <p:outputLabel value="#{soli.idEspecializacion.nombreespecialidad}" />
               </p:column>
-              <p:column headerText="Telefono" filterMatchMode="contains">
+              <p:column headerText="Teléfono" filterMatchMode="contains">
                   <p:outputLabel value="#{usuariosControlador.BuscarNum(soli.numerodocumento)} "/>
               </p:column>
               <p:column headerText="Ver detalles" filterMatchMode="contains">
@@ -198,7 +198,7 @@
           style="text-align: center;font-size: 18px;font-weight: bold;font-family:Gilroy-Light ;" />
         <div class="form-group">
           <p:datePicker id="hora_citacion" value="#{aspirantesControlador.hora}" required="true"
-            requiredMessage="Debe especificar la hora de la citacion" timeOnly="true" pattern="HH:mm">
+            requiredMessage="Debe especificar la hora de la citación" timeOnly="true" pattern="HH:mm">
           </p:datePicker>
         </div>
         <p:commandButton value="Enviar la entrevista" update=":dlgPer" styleClass=" mb-3"
