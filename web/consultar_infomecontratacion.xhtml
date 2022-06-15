@@ -148,12 +148,12 @@
               <p:column headerText="ID del informe" filterMatchMode="contains" sortBy="#{inf.idInforme}">
                 <p:outputLabel value="#{inf.idInforme}" />
               </p:column>
-              <p:column headerText="Numero documento aspirante" filterMatchMode="contains"
+              <p:column headerText="Número documento aspirante" filterMatchMode="contains"
                 sortBy="#{inf.numerodocumentoaspirante.numerodocumento}"
                 filterBy="#{inf.numerodocumentoaspirante.numerodocumento}">
                 <p:outputLabel value="#{inf.numerodocumentoaspirante.numerodocumento}" />
               </p:column>
-              <p:column headerText="Nombre del aspirante aspirate" filterMatchMode="contains">
+              <p:column headerText="Nombre del aspirante" filterMatchMode="contains">
                 <p:outputLabel
                   value="#{inf.numerodocumentoaspirante.usuarios.nombre1} #{inf.numerodocumentoaspirante.usuarios.apellido1}" />
               </p:column>
