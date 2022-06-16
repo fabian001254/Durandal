@@ -100,12 +100,12 @@
                   <p:message for="Nombre_2" style="color: red;" />
                 </div>
 
-                    <div class="form-group">
+                   <div class="form-group col-12">
                   <label for="Fecha">Fecha de nacimiento</label>
-                  <p:datePicker id="Fecha" value="#{usuariosControlador.usuarios.fechanacimiento}" required="true"
-                    requiredMessage="Debe especificar el apellido" numberOfMonths="1" monthNavigator="true"
-                    yearNavigator="true">
-                  </p:datePicker>
+                  <p:calendar id="Fecha" value="#{usuariosControlador.usuarios.fechanacimiento}" required="true"
+                    requiredMessage="Debe especificar la fechad e nacimiento" locale="es" navigator="true"
+                    pattern="dd/MM/yyyy" autocomplete="false" showOn="button">
+                  </p:calendar>
                   <p:message for="Fecha" style="color: red;" />
                 </div>
                 
