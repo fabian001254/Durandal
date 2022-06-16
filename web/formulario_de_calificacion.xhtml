@@ -159,7 +159,7 @@
                 <p:outputLabel value="#{inf.fechainicio}"><f:convertDateTime pattern="yyyy/MM/dd"></f:convertDateTime></p:outputLabel>
               </p:column>
               <p:column headerText="Fecha final" filterMatchMode="contains" sortBy="#{inf.fechafinal}">
-                <p:outputLabel value="#{inf.fechafinal}" ><f:convertDateTime pattern=""></f:convertDateTime></p:outputLabel>
+                <p:outputLabel value="#{inf.fechafinal}" ><f:convertDateTime pattern="yyyy/MM/dd"></f:convertDateTime></p:outputLabel>
               </p:column>
               <p:column headerText="Modificar" filterMatchMode="contains">
                 <p:commandButton styleClass="bton" oncomplete="PF('wdlgPer').show()" update=":dlgPer"
