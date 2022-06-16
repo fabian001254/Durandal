@@ -21,14 +21,12 @@
 <h:body>
   <p:growl id="growl" showDetail="true" />
   <p:growl id="growl-sticky" for="sticky-key" showDetail="true" sticky="true" />
-  <div class="container mt-3 p-3 d-flex" style="border-radius: 8%;">
-    <div class="row">
-      <div class="col-md-5 text-center ml-2 mr-2" style="font-size: 23px;">
-        <img src="assets/img/register.svg" width="120%" class="pr-5" style="margin-top: 20%;"></img>
-        <a href="login.xhtml"><button class="btn boton_personalizado1 mb-3 mt-5" type="submit">Iniciar
-            sesión</button></a>
-      </div>
-
+  <div class="container mt-3 d-flex justify-content-center" style="border-radius: 8%;">
+    <div class="col-md-6">
+        <center><img src="assets/img/register.svg" width="400px" class="pr-5" style="margin-top: 20%;"></img></center>
+        <center><a href="login.xhtml"><button class="btn boton_personalizado1 mb-3 mt-5" type="submit">Iniciar
+            sesión</button></a></center>
+    </div>
       <div class="col-md-6 p-3 ml-5 mr-4" style="text-align: center;">
         <div class="card w-auto"
           style="box-shadow: 0px 0px 14px 5px rgba(0, 0, 0, 0.61); border-radius: 50px; outline: none; font-size: 20px;">
@@ -37,24 +35,24 @@
             <h:form enctype="multipart/form-data">
               <div class="form-row justify-content-center" style="border-bottom: 2px black solid;">
                 <h1 class="mb-3 mt-3" style="font-size: 30px; color: #0303fab9;">Información electrónica</h1>
-                <div class="col-md-6 mb-1">
+                <div class="form-group">
                   <label for="Correo">Correo</label>
                   <p:inputText id="Correo" value="#{usuariosControlador.usuarios.correo}" required="true"
                     requiredMessage="Debe especificar el correo">
                   </p:inputText>
                   <p:message for="Correo" style="color: red;" />
-                </div>
-                <div class="col-md-6 mb-1">
+                  </div>
+                 <div class="form-group ml-1">
                   <label for="Clave">Clave</label>
                   <p:password id="Clave" value="#{usuariosControlador.usuarios.clave}" required="true"
-                    requiredMessage="Debe especificar el correo">
+                    requiredMessage="Debe especificar la clave">
                   </p:password>
                   <p:message for="Clave" style="color: red;" />
-                </div>
+                 </div>
               </div>
               <div class="form-row justify-content-center" style="border-bottom: 2px black solid;">
                 <h1 class="mb-3 mt-3" style="font-size: 30px; color: #0303fab9;">Información personal</h1>
-                <div class="col-md-6 mb-1">
+                <div class="form-group">
                   <label for="tp">Tipo de documento</label>
                   <h:selectOneMenu id="tp" required="true" value="#{usuariosControlador.documentos.idDeDocumento}"
                     requiredMessage="Seleccione un aspirante"
@@ -64,35 +62,35 @@
                   </h:selectOneMenu>
                   <p:message for="tp" style="color: red;" />
                 </div>
-                <div class="col-md-6 mb-1">
+                <div class="form-group ml-1">
                   <label for="doc">Número de documento</label>
                   <p:inputText id="doc" value="#{usuariosControlador.usuarios.numerodocumento}" required="true"
                     requiredMessage="Debe especificar el numero de documento">
                   </p:inputText>
                   <p:message for="doc" style="color: red;" />
                 </div>
-                <div class="col-md-6 mb-1">
+                <div class="form-group">
                   <label for="Nombre_1">Nombre 1</label>
                   <p:inputText id="Nombre_1" value="#{usuariosControlador.usuarios.nombre1}" required="true"
                     requiredMessage="Debe especificar el nombre">
                   </p:inputText>
                   <p:message for="Nombre_1" style="color: red;" />
                 </div>
-                <div class="col-md-6 mb-1">
+                <div class="form-group ml-1">
                   <label for="Nombre_2">Nombre 2</label>
                   <p:inputText id="Nombre_2" value="#{usuariosControlador.usuarios.nombre2}" required="true"
                     requiredMessage="Debe especificar el nombre">
                   </p:inputText>
                   <p:message for="Nombre_2" style="color: red;" />
                 </div>
-                <div class="col-md-6 mb-2">
+                <div class="form-group">
                   <label for="Apellido_1">Apellido 1</label>
                   <p:inputText id="Apellido_1" value="#{usuariosControlador.usuarios.apellido1}" required="true"
                     requiredMessage="Debe especificar el apellido">
                   </p:inputText>
                   <p:message for="Apellido_1" style="color: red;" />
                 </div>
-                <div class="col-md-6 mb-2">
+                <div class="form-group ml-1">
                   <label for="Apellido_2">Apellido 2</label>
                   <p:inputText id="Apellido_2" value="#{usuariosControlador.usuarios.apellido2}" required="true"
                     requiredMessage="Debe especificar el apellido">
@@ -100,7 +98,7 @@
                   <p:message for="Nombre_2" style="color: red;" />
                 </div>
 
-                <div class="col-md-6 mb-2">
+                    <div class="form-group">
                   <label for="Fecha">Fecha de nacimiento</label>
                   <p:datePicker id="Fecha" value="#{usuariosControlador.usuarios.fechanacimiento}" required="true"
                     requiredMessage="Debe especificar el apellido" numberOfMonths="1" monthNavigator="true"
@@ -108,14 +106,15 @@
                   </p:datePicker>
                   <p:message for="Fecha" style="color: red;" />
                 </div>
-                <div class="col-md-6 mb-2">
+                
+                <div class="form-group">
                   <label for="dire">Dirección</label>
                   <p:inputText id="dire" value="#{usuariosControlador.usuarios.direccion}" required="true"
                     requiredMessage="Debe especificarla direccion">
                   </p:inputText>
                   <p:message for="dire" style="color: red;" />
                 </div>
-                <div class="col-md-6 mb-2">
+                <div class="form-group col-12">
                   <label for="tel">Teléfono</label>
                   <p:inputText id="tel" value="#{usuariosControlador.usuarios.telefono}" required="true"
                     requiredMessage="Debe especificar el numero de telefono">
@@ -125,7 +124,7 @@
               </div>
               <div class="form-row justify-content-center">
                 <h1 class="mb-3 mt-3" style="font-size: 30px; color: #0303fab9;">Información Laboral</h1>
-                <div class="col-md-12 mb-2">
+                <div class="form-group">
                   <label for="es">Perfil</label>
                   <h:selectOneMenu id="es" required="true" value="#{usuariosControlador.perfil.idPerfil}"
                     requiredMessage="Seleccione un aspirante"
@@ -135,7 +134,7 @@
                   </h:selectOneMenu>
                   <p:message for="es" style="color: red;" />
                 </div>
-                <div class="col-md-12 mb-2">
+                <div class="form-group ml-1">
                   <label for="ex">Especialidad</label>
                   <h:selectOneMenu id="ex" required="true" value="#{usuariosControlador.especialidad.idEspecialidad}"
                     requiredMessage="Seleccione un aspirante"
@@ -145,7 +144,7 @@
                   </h:selectOneMenu>
                   <p:message for="ex" style="color: red;" />
                 </div>
-                <div class="col-md-12 mb-2">
+                <div class="form-group">
                   <label for="dia">Días hábiles (Ingrese los días en los que estara disponible *Con comas* EJ:
                     lunes,martes ,viernes - Si son todos escribir Todos)</label>
                   <p:inputText id="dia" value="#{usuariosControlador.aspirantes.diashabiles}" required="true"
@@ -154,7 +153,7 @@
                   <p:message for="dia" style="color: red;" />
                 </div>
 
-                <div class="col-md-6 mb-2">
+                <div class="form-group ml-1">
                   <label for="hora1">Hora a la que puede iniciar su trabajo</label>
                   <p:datePicker id="hora1" value="#{usuariosControlador.aspirantes.horainicial}" required="true"
                     requiredMessage="Debe especificar la razon social" timeOnly="true" pattern="HH:mm">
@@ -162,14 +161,14 @@
                   <p:message for="hora1" style="color: red;" />
                 </div>
 
-                <div class="col-md-6 mb-2">
+                <div class="form-group">
                   <label for="hora2">Hora a la que puede finalizar su trabajo</label>
                   <p:datePicker id="hora2" value="#{usuariosControlador.aspirantes.horafinal}" required="true"
                     requiredMessage="Debe especificar la razon social" timeOnly="true" pattern="HH:mm">
                   </p:datePicker>
                   <p:message for="hora2" style="color: red;" />
                 </div>
-                <div class="col-md-12 mb-2">
+                <div class="form-group">
                   <label for="ficha">Ingrese su hoja de vida</label>
                   <h:inputFile id="ficha" value="#{usuariosControlador.hv}" required="true" label="Ingrese el archivo"
                     requiredMessage="Ingrese un archivo" style="font-size:15px;" />
@@ -183,8 +182,7 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
+      </div>
 </h:body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
