@@ -134,10 +134,10 @@
                 <p:outputLabel value="#{ap.pl}" />
               </p:column>
               <p:column headerText="Fecha inicio" filterMatchMode="contains" sortBy="#{ap.diainicial}">
-                <p:outputLabel value="#{ap.diainicial}" />
+               <p:outputLabel value="#{ap.diainicial}" ><f:convertDateTime pattern="yyyy/MM/dd"></f:convertDateTime></p:outputLabel>
               </p:column>
               <p:column headerText="Fecha Final" filterMatchMode="contains" sortBy="#{ap.diafinal}">
-                <p:outputLabel value="#{ap.diafinal}" />
+                    <p:outputLabel value="#{ap.diafinal}" ><f:convertDateTime pattern="yyyy/MM/dd"></f:convertDateTime></p:outputLabel>              
               </p:column>
               <p:column headerText="Detalles" filterMatchMode="contains">
                 <p:commandButton styleClass="bton" oncomplete="PF('wdlgPer').show()" style="font-size:15px;"
