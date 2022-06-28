@@ -138,7 +138,7 @@ public class psicotecnicasControlador implements Serializable {
     public void comprobarEnvio(Long doc) throws IOException{
         aspirantes = aspirantesfacade.find(doc);
             pruebas = psicotecnicasfacade.Comprobar(aspirantes);
-            if(pruebas.getPathPruebaEntregada() == null){
+            if(pruebas.getPathPruebaEntregada() != null){
                 FacesContext.getCurrentInstance().getExternalContext().redirect("personal_no_reclutado1.xhtml");                
             }
             pruebas = new PruebasPsicotecnicas();
